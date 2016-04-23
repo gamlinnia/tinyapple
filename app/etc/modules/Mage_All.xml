@@ -159,7 +159,7 @@
             </depends>
         </Mage_SalesRule>
         <Mage_Checkout>
-            <active>true</active>
+            <active>false</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Sales/>
@@ -322,7 +322,7 @@
             </depends>
         </Mage_GoogleAnalytics>
         <Mage_CatalogInventory>
-            <active>true</active>
+            <active>false</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Catalog/>
@@ -372,7 +372,7 @@
             </depends>
         </Mage_Dataflow>
         <Mage_Rss>
-            <active>true</active>
+            <active>false</active>
             <codePool>core</codePool>
              <depends>
                 <Mage_Catalog/>
