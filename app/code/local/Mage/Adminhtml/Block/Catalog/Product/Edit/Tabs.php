@@ -71,6 +71,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tabs extends Mage_Adminhtml_Bloc
                     continue;
                 }
 
+                Mage::log(Mage::helper('catalog')->__($group->getAttributeGroupName()), null, 'Li.log');
                 $this->addTab('group_'.$group->getId(), array(
                     'label'     => Mage::helper('catalog')->__($group->getAttributeGroupName()),
                     'content'   => $this->_translateHtml($this->getLayout()->createBlock($this->getAttributeTabBlock(),
