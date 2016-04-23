@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <service_index_index>
+        <reference name="content">
+            <block type="service/content" name="service_content" template="service/content.phtml"/>
+        </reference>
+    </service_index_index>
+</layout>
