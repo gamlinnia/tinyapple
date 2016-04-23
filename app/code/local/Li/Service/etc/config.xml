@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Li_Service>
+            <version>0.0.1</version>
+        </Li_Service>
+    </modules>
+    <global>
+        <blocks>
+            <service>
+                <class>Li_Service_Block</class>
+            </service>
+        </blocks>
+        <helpers>
+            <service>
+                <class>Li_Service_Helper</class>
+            </service>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <service>
+                <use>standard</use>
+                <args>
+                    <module>Li_Service</module>
+                    <frontName>service</frontName>
+                </args>
+            </service>
+        </routers>
+        <layout>
+            <updates>
+                <service>
+                    <!--file in theme-->
+                    <file>service.xml</file>
+                </service>
+            </updates>
+        </layout>
+    </frontend>
+</config>
