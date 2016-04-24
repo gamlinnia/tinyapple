@@ -12,8 +12,7 @@
     <about_index_index>
         <reference name="head">
             <action method="addCss">
-                <type>skin_css</type>
-                <name>custom_index.css</name>
+                <stylesheet>css/custom_index.css</stylesheet>
             </action>
         </reference>
         <reference name="root">
