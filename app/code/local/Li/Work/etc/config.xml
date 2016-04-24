@@ -31,7 +31,7 @@
             <updates>
                 <service>
                     <!--file in theme-->
-                    <file>li_service.xml</file>
+                    <file>service.xml</file>
                 </service>
             </updates>
         </layout>
