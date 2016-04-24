@@ -7,13 +7,15 @@
                 <rel>stylesheet</rel>
                 <href>https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css</href>
             </action>
+        </reference>
+    </default>
+    <about_index_index>
+        <reference name="head">
             <action method="addCss">
                 <type>skin_css</type>
                 <name>custom_index.css</name>
             </action>
         </reference>
-    </default>
-    <about_index_index>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
