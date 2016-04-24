@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Li_Contact>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Li_Contact>
+        <Li_Service>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Li_Service>
+        <Li_Works>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Li_Works>
+        <Li_About>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Li_About>
+    </modules>
+</config>

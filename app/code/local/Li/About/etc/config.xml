@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Li_About>
+            <version>0.0.1</version>
+        </Li_About>
+    </modules>
+    <global>
+        <blocks>
+            <about>
+                <class>Li_About_Block</class>
+            </about>
+        </blocks>
+        <helpers>
+            <about>
+                <class>Li_About_Helper</class>
+            </about>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <about>
+                <use>standard</use>
+                <args>
+                    <module>Li_About</module>
+                    <frontName>about</frontName>
+                </args>
+            </about>
+        </routers>
+        <layout>
+            <updates>
+                <about>
+                    <!--file in theme-->
+                    <file>li_about.xml</file>
+                </about>
+            </updates>
+        </layout>
+    </frontend>
+</config>
