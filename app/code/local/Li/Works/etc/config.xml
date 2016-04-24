@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <Li_Service>
+        <Li_Works>
             <version>0.0.1</version>
-        </Li_Service>
+        </Li_Works>
     </modules>
     <global>
         <blocks>
-            <service>
-                <class>Li_Service_Block</class>
-            </service>
+            <works>
+                <class>Li_Works_Block</class>
+            </works>
         </blocks>
         <helpers>
-            <service>
-                <class>Li_Service_Helper</class>
-            </service>
+            <works>
+                <class>Li_Works_Helper</class>
+            </works>
         </helpers>
     </global>
     <frontend>
         <routers>
-            <service>
+            <works>
                 <use>standard</use>
                 <args>
-                    <module>Li_Service</module>
-                    <frontName>service</frontName>
+                    <module>Li_Works</module>
+                    <frontName>works</frontName>
                 </args>
-            </service>
+            </works>
         </routers>
         <layout>
             <updates>
-                <service>
+                <works>
                     <!--file in theme-->
-                    <file>service.xml</file>
-                </service>
+                    <file>li_works.xml</file>
+                </works>
             </updates>
         </layout>
     </frontend>
