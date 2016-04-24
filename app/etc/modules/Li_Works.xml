@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Li_Works>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Li_Works>
+    </modules>
+</config>
