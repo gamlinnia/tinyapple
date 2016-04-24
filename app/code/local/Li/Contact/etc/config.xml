@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Li_Contact>
+            <version>0.0.1</version>
+        </Li_Contact>
+    </modules>
+    <global>
+        <blocks>
+            <contact>
+                <class>Li_Contact_Block</class>
+            </contact>
+        </blocks>
+        <helpers>
+            <contact>
+                <class>Li_Contact_Helper</class>
+            </contact>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <contact>
+                <use>standard</use>
+                <args>
+                    <module>Li_Contact</module>
+                    <frontName>contact</frontName>
+                </args>
+            </contact>
+        </routers>
+        <layout>
+            <updates>
+                <contact>
+                    <!--file in theme-->
+                    <file>li_contact.xml</file>
+                </contact>
+            </updates>
+        </layout>
+    </frontend>
+</config>
