@@ -3,7 +3,7 @@
 <layout version="0.1.0">
     <contact_index_index>
         <reference name="root">
-            <action method="setTemplate"><template>page/empty.phtml</template></action>
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
         <reference name="content">
             <block type="contact/content" name="contact_content" template="li_contact/content.phtml"/>
