@@ -3,8 +3,9 @@
 <layout version="0.1.0">
     <default>
         <reference name="head">
-            <action method="addCss">
-                <stylesheet>https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css</stylesheet>
+            <action method="addLinkRel">
+                <rel>stylesheet</rel>
+                <href>https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css</href>
             </action>
         </reference>
     </default>
