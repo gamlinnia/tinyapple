@@ -7,6 +7,10 @@
                 <rel>stylesheet</rel>
                 <href>https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css</href>
             </action>
+            <action method="addCss">
+                <type>skin_css</type>
+                <name>custom_index.css</name>
+            </action>
         </reference>
     </default>
     <about_index_index>
