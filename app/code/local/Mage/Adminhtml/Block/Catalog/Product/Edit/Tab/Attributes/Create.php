@@ -56,27 +56,26 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Attributes_Create extends Ma
 
     protected function _beforeToHtml()
     {
-/*
+
         $this->setId('create_attribute_' . $this->getConfig()->getGroupId())
             ->setOnClick($this->getJsObjectName() . '.create();')
             ->setType('button')
             ->setClass('add')
             ->setLabel(Mage::helper('adminhtml')->__('Create New Attribute'));
-*/
 
-//        $this->getConfig()
-//            ->setUrl($this->getUrl(
-//                '*/catalog_product_attribute/new',
-//                array(
-//                    'group'     => $this->getConfig()->getGroupId(),
-//                    'tab'       => $this->getConfig()->getTabId(),
-//                    'store'     => $this->getConfig()->getStoreId(),
-//                    'product'   => $this->getConfig()->getProductId(),
-//                    'set'       => $this->getConfig()->getAttributeSetId(),
-//                    'type'      => $this->getConfig()->getTypeId(),
-//                    'popup'     => 1
-//                )
-//            ));
+        $this->getConfig()
+            ->setUrl($this->getUrl(
+                '*/catalog_product_attribute/new',
+                array(
+                    'group'     => $this->getConfig()->getGroupId(),
+                    'tab'       => $this->getConfig()->getTabId(),
+                    'store'     => $this->getConfig()->getStoreId(),
+                    'product'   => $this->getConfig()->getProductId(),
+                    'set'       => $this->getConfig()->getAttributeSetId(),
+                    'type'      => $this->getConfig()->getTypeId(),
+                    'popup'     => 1
+                )
+            ));
 
         return parent::_beforeToHtml();
     }
