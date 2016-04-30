@@ -73,7 +73,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tabs extends Mage_Adminhtml_Bloc
 
                 /* remove tabs from adminhtml catalog product */
                 Mage::log(Mage::helper('catalog')->__($group->getAttributeGroupName()), null, 'Li.log');
-                $groupsNotToShow = array('Prices', 'Meta Information', 'Recurring Profile', 'Design', 'Gift Options');
+                $groupsNotToShow = array('Prices', 'Meta Information', 'Recurring Profile', 'Design', 'Gift Options', 'no_use');
                 if (!in_array($group->getAttributeGroupName(), $groupsNotToShow)) {
                     $this->addTab('group_'.$group->getId(), array(
                         'label'     => Mage::helper('catalog')->__($group->getAttributeGroupName()),
