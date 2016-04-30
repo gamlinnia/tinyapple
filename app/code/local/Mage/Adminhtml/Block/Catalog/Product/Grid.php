@@ -217,7 +217,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Grid extends Mage_Adminhtml_Block_Wid
                     'index' => 'qty',
                 ));
         }
-
+/*
         $this->addColumn('visibility',
             array(
                 'header'=> Mage::helper('catalog')->__('Visibility'),
@@ -226,7 +226,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Grid extends Mage_Adminhtml_Block_Wid
                 'type'  => 'options',
                 'options' => Mage::getModel('catalog/product_visibility')->getOptionArray(),
             ));
-
+*/
         $this->addColumn('status',
             array(
                 'header'=> Mage::helper('catalog')->__('Status'),
