@@ -1037,6 +1037,7 @@
 "This report depends on timezone configuration. Once timezone is changed, the lifetime statistics need to be refreshed.","This report depends on timezone configuration. Once timezone is changed, the lifetime statistics need to be refreshed."
 "This section is not allowed.","This section is not allowed."
 "This user no longer exists.","This user no longer exists."
+"Thumbnail","縮圖"
 "Time","Time"
 "Time selection:","Time selection:"
 "Time:","Time:"
