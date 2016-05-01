@@ -287,7 +287,7 @@
 "Enable for reindexing a big number of SKUs.","Enable for reindexing a big number of SKUs."
 "Enabled","Enabled"
 "Error during retrieval of option value: %s","Error during retrieval of option value: %s"
-"Exclude","Exclude"
+"Exclude","排除"
 "Expand All","展開所有"
 "Failed","Failed"
 "Failed to copy file %s. Please, delete media with non-existing images and try again.","Failed to copy file %s. Please, delete media with non-existing images and try again."
