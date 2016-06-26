@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Li_Homepage>
+            <version>0.0.1</version>
+        </Li_Homepage>
+    </modules>
+    <global>
+        <blocks>
+            <homepage>
+                <class>Li_Homepage_Block</class>
+            </homepage>
+        </blocks>
+        <helpers>
+            <homepage>
+                <class>Li_Homepage_Helper</class>
+            </homepage>
+        </helpers>
+    </global>
+</config>
