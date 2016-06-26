@@ -11,15 +11,39 @@
     </default>
     <about_index_index>
         <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type><script>tinyapple/js/clicker_box.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type><script>tinyapple/slick/slick.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type><script>tinyapple/js/scrollToTop.js</script>
+            </action>
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
             <action method="addCss">
-                <stylesheet>css/custom_index.css</stylesheet>
+                <stylesheet>tinyapple/css/normalize.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>tinyapple/css/menu.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>tinyapple/css/index.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>tinyapple/slick/slick.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>tinyapple/slick/slick-theme.css</stylesheet>
             </action>
         </reference>
         <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/empty.phtml</template></action>
         </reference>
         <reference name="content">
+            <block type="homepage/html_header" name="custom_header"></block>
             <block type="about/content" name="about_content" template="li_about/content.phtml"/>
+            <block type="homepage/html_footer" name="custom_footer"></block>
         </reference>
     </about_index_index>
 </layout>

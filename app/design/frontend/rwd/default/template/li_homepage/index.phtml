@@ -1,0 +1,179 @@
+
+<div id="content">
+    <div id="idx-banner" class="clearfix">
+        <div class="idx-banner-overlay-l">x</div>
+        <div class="idx-banner-overlay-r">x</div>
+        <div id="idx-bn-slide" class="slider">
+            <div>
+                <img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-banner/idx-banner01.jpg') ?>" alt="">
+                <div class="bn-text for-v-middle">
+                    <div>
+                        <div class="slogan">台中 / 彰化 / 南投<br>公寓、透天厝、浴室裝修</div>
+                        <a href="products-list.html" class="more-btn">浴室裝修</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-banner/idx-banner02.jpg') ?>" alt="">
+                <div class="bn-text for-v-middle">
+                    <div>
+                        <div class="slogan">台中 / 彰化 / 南投<br>公寓、透天厝、浴室裝修</div>
+                        <a href="products-list.html" class="more-btn">透天厝整修</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-banner/idx-banner03.jpg') ?>" alt="">
+                <div class="bn-text for-v-middle">
+                    <div>
+                        <div class="slogan">台中 / 彰化 / 南投<br>公寓、透天厝、浴室裝修</div>
+                        <a href="products-list.html" class="more-btn">系統櫃設計</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end of idx-banner -->
+
+
+    <div id="idx-content">
+
+        <div id="idx-top-section" class="clearfix">
+
+            <div class="container">
+                <div class="idx-about">
+                    <p class="title">小蘋果工程</p>
+                    <div class="idx-company-pic"><img src="<?php echo $this->getSkinUrl('tinyapple/images/company-pic.jpg') ?>" alt=""></div>
+                    <div class="idx-desc">
+                        <p>用心傾聽客戶的需求，秉持著誠心、真心、用心的服務精神本公司擁有最專業的工作團隊為客戶嚴格把關，替客戶設計一個舒適且符合客戶需求的生活空間!</p>
+                        <img src="<?php echo $this->getSkinUrl('tinyapple/images/icon01.png') ?>" alt="" width="30px" class="icon">
+                        <p class="em-p blue-word">專門負責台中 / 彰化 / 南投 ， 浴室整修、透天厝、公寓整修工程。</p>
+                        <a href="aboutus.html" class="more-btn">更多內容</a>
+                    </div>
+                </div><!-- (sol. for the space of inline-block)
+						end of idx-about --><div class="idx-service">
+                    <div class="title">服務項目</div>
+                    <table>
+                        <tr>
+                            <td class="align-right">
+                                套房規劃修改<br>浴室整修<br>地層下陷整修
+                            </td>
+                            <td>
+                                <img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-pic01.jpg') ?>" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-pic02.jpg') ?>" alt="">
+                            </td>
+                            <td class="align-left">
+                                <p>H鋼構增建<br>外牆拉皮<br>外牆、陽台、防水</p>
+                                <a href="aboutus.html" class="more-btn">更多服務</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- end of idx-service -->
+            </div>
+            <!-- end of container -->
+
+        </div><!-- end of idx-top-section -->
+
+        <div id="idx-lower-section" class="container">
+
+            <div class="container">
+                <div class="title underline-title">最新作品</div>
+
+                <div id="idx-works-slide" class="slider">
+                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic01.jpg') ?>" alt=""></div>
+                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic02.jpg') ?>" alt=""></div>
+                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic03.jpg') ?>" alt=""></div>
+                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic01.jpg') ?>" alt=""></div>
+                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic02.jpg') ?>" alt=""></div>
+                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic03.jpg') ?>" alt=""></div>
+                </div>
+            </div>
+            <!-- end of container -->
+
+            <script>
+                jQuery(document).ready(function() {
+                    jQuery('#idx-works-slide').slick({
+                        arrows: false,
+                        adaptiveHeight: true,
+                        autoplay: true,
+                        autoplaySpeed: 3000,
+                        dots: true,
+                        infinite: true,
+                        speed: 500,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        pauseOnHover: false, 
+                        PauseOnFocus: false,
+                        responsive: [
+                            {
+                                breakpoint: 760,
+                                settings: {
+                                    slidesToShow: 2,
+                                    slidesToScroll: 2
+                                }
+                            },
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1
+                                }
+                            }
+                        ]
+                    });
+                })
+            </script>
+        </div><!-- end of idx-lower-section -->
+    </div><!-- end of idx-content -->
+</div><!-- end of content -->
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var slick_object = {
+            window_width: 0,
+            init: function (target) {
+                this.runMainBannerSlider(target, this.calcPartialImageWidth());
+                this.resizeMainBannerSlider(target, this.calcPartialImageWidth());
+            },
+            runMainBannerSlider: function (target, centerPadding) {
+                jQuery(target).slick({
+                    arrows: true,
+                    adaptiveHeight: true,
+                    autoplay: true,
+                    useTransform: false,
+                    dots: false,
+                    infinite: true,
+                    centerMode: true,
+                    centerPadding: (centerPadding > 0) ? centerPadding + 'px' : 0,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    pauseOnHover: false, 
+                    PauseOnFocus: false
+                });
+            },
+            resizeMainBannerSlider: function (target, centerPadding) {
+                jQuery(target).slick('slickSetOption', {centerPadding: (centerPadding > 0) ? centerPadding + 'px' : 0});
+            },
+            calcPartialImageWidth: function () {
+                this.window_width = jQuery(window).width() + this.getScrollBarWidth();
+                return ((this.window_width / 2) - (480 + this.getScrollBarWidth() / 2) > 0) ? (this.window_width / 2) - (480 + this.getScrollBarWidth() / 2) : 0;
+            },
+            getScrollBarWidth: function () {
+                var $outer = jQuery('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+                    widthWithScroll = jQuery('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+                $outer.remove();
+                return 100 - widthWithScroll;
+            }
+        };
+
+        slick_object.init("#idx-bn-slide");
+        jQuery(window).resize(function () {
+            slick_object.resizeMainBannerSlider("#idx-bn-slide", slick_object.calcPartialImageWidth());
+        });
+
+    });
+</script>
