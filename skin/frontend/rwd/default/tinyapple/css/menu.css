@@ -20,19 +20,22 @@
 	color: #fff;
 	text-align: center;
 	background: rgba(0, 38, 88, .8);
-	-webkit-transition: .7s ease;
-	-ms-transition: .7s ease;
-	transition: .7s ease;
+	-webkit-transition: .5s ease;
+	-ms-transition: .5s ease;
+	transition: .5s ease;
 }
 .more-btn:hover {
+	-webkit-transform: translate(0px, -2px);
+	transform: translate(0px, -2px);
 	background: rgba(0, 38, 88, 1);
-	-webkit-transition: .7s ease;
-	-ms-transition: .7s ease;
-	transition: .7s ease;
+	-webkit-transition: .5s ease;
+	-ms-transition: .5s ease;
+	transition: .5s ease;
 }
 
 #PageTopBtn {
 	cursor: pointer;
+	z-index: 9999;
 }
 
 .dial {
