@@ -447,7 +447,7 @@ th {
 
 
 body{
-  font-family: Helvetica Neue, Helvetica, Arial, "微軟正黑體", "Microsoft JhengHei", "Noto Sans CJK TC", PMingLiU, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, "Noto Sans CJK TC", "微軟正黑體", "Microsoft JhengHei", PMingLiU, sans-serif;
   -webkit-text-size-adjust: none;
   line-height: 150%;
   letter-spacing: 1pt;

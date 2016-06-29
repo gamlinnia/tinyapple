@@ -7,7 +7,7 @@
 
     <div class="container clearfix">
         <div id="footer-logo" class="clearfix">
-            <a href="index.html" class="left for-v-middle"><img src="<?php echo $this->getSkinUrl('tinyapple/images/footer-logo.png') ?>" alt=""></a>
+            <a href="<?php echo Mage::getBaseUrl() ?>" class="left for-v-middle"><img src="<?php echo $this->getSkinUrl('tinyapple/images/footer-logo.png') ?>" alt=""></a>
         </div><!-- end of footer-contact-info -->
 
         <div id="footer-ad" class="ad-block">
@@ -18,11 +18,11 @@
 
         <div id="footer-nav">
             <ul>
-                <li class="mainShow"><a href="aboutus.html">公司簡介<span>About</span></a></li>
-                <li class="mainShow"><a href="services.html">服務項目<span>Service</span></a></li>
-                <li class="mainShow"><a href="products.html">作品展示<span>Works</span></a></li>
-                <li class="mainShow"><a href="contact.html">聯絡我們<span>Contact Us</span></a></li>
-                <li class="mainShow"><a href="index.html"><span class="fa fa-home"></span><span>Home</span></a></li>
+                <li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>aboutus">公司簡介<span>About</span></a></li><!-- (sol. for the space of inline-block)
+                --><li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>services">服務項目<span>Service</span></a></li><!-- (sol. for the space of inline-block)
+                --><li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>works">作品展示<span>Works</span></a></li><!-- (sol. for the space of inline-block)
+                --><li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>contact">聯絡我們<span>Contact Us</span></a></li><!-- (sol. for the space of inline-block)
+                --><li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>"><span class="fa fa-home"></span><span>Home</span></a></li>
             </ul>
         </div><!-- end of footer-contact-info -->
 

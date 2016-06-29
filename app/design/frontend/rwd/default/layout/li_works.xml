@@ -2,8 +2,48 @@
 
 <layout version="0.1.0">
     <works_index_index>
+
+        <update handle="tinyapple_insidepage" />
+
         <reference name="content">
-            <block type="works/content" name="works_content" template="li_works/content.phtml"/>
+            <block type="homepage/html_header" name="custom_header" />
+            <block type="works/content" name="works_content" template="li_works/works.phtml" />
+            <block type="homepage/html_footer" name="custom_footer" />
         </reference>
     </works_index_index>
+    <works_flow_index>
+
+        <update handle="tinyapple_insidepage" />
+
+        <reference name="content">
+            <block type="homepage/html_header" name="custom_header" />
+            <block type="works/content" name="works_content" template="li_works/flow_list.phtml" />
+            <block type="homepage/html_footer" name="custom_footer" />
+        </reference>
+    </works_flow_index>
+    <works_completed_index>
+
+        <update handle="tinyapple_insidepage" />
+
+        <reference name="content">
+            <block type="homepage/html_header" name="custom_header" />
+            <block type="works/content" name="works_content" template="li_works/completed_list.phtml">
+                <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs" />
+            </block>
+            <block type="homepage/html_footer" name="custom_footer" />
+        </reference>
+    </works_completed_index>
+    <works_completed_works>
+
+        <update handle="tinyapple_insidepage" />
+
+        <reference name="content">
+            <block type="homepage/html_header" name="custom_header" />
+            <block type="works/content" name="works_content" template="li_works/completed.phtml">
+                <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs" />
+            </block>
+            <block type="homepage/html_footer" name="custom_footer" />
+        </reference>
+    </works_completed_works>
+
 </layout>

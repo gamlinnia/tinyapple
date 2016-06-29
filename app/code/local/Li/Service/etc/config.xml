@@ -23,7 +23,7 @@
                 <use>standard</use>
                 <args>
                     <module>Li_Service</module>
-                    <frontName>service</frontName>
+                    <frontName>services</frontName>
                 </args>
             </service>
         </routers>

@@ -1,3 +1,5 @@
+<?php $typeValueToFilter = $this->helper('homepage/data')->getOptionValueIdFromAttributeOptionLabel('attributeName', 'type', '完工作品') ?>
+<?php $productCollection = Mage::getModel('catalog/product')->getCollection()->setOrder('entity_id', 'DESC')->addFieldToFilter('type', $typeValueToFilter) ?>
 
 <div id="content">
     <div id="idx-banner" class="clearfix">
@@ -41,7 +43,7 @@
 
             <div class="container">
                 <div class="idx-about">
-                    <p class="title">小蘋果工程</p>
+                    <h1 class="title">小蘋果工程</h1>
                     <div class="idx-company-pic"><img src="<?php echo $this->getSkinUrl('tinyapple/images/company-pic.jpg') ?>" alt=""></div>
                     <div class="idx-desc">
                         <p>用心傾聽客戶的需求，秉持著誠心、真心、用心的服務精神本公司擁有最專業的工作團隊為客戶嚴格把關，替客戶設計一個舒適且符合客戶需求的生活空間!</p>
@@ -84,12 +86,17 @@
                 <div class="title underline-title">最新作品</div>
 
                 <div id="idx-works-slide" class="slider">
-                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic01.jpg') ?>" alt=""></div>
-                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic02.jpg') ?>" alt=""></div>
-                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic03.jpg') ?>" alt=""></div>
-                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic01.jpg') ?>" alt=""></div>
-                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic02.jpg') ?>" alt=""></div>
-                    <div><img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-works/idx-pic03.jpg') ?>" alt=""></div>
+                    <?php foreach ($productCollection as $product): ?>
+                        <?php $_product = Mage::getModel('catalog/product')->load($product->getId()) ?>
+                        <div class="newer-item">
+                            <div class="item-wrap">
+                                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>" alt="">
+                                <a href="products.html" class="newer-item-text">
+                                    <span>數位噴墨-彰化秀水數位噴墨<span class="fa fa-link"></span></span>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
                 </div>
             </div>
             <!-- end of container -->
@@ -119,6 +126,8 @@
                             {
                                 breakpoint: 480,
                                 settings: {
+                                    arrows: true,
+                                    dots: false,
                                     slidesToShow: 1,
                                     slidesToScroll: 1
                                 }

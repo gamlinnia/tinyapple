@@ -1,0 +1,15 @@
+<?php $typeValueToFilter = $this->helper('homepage/data')
+    ->getOptionValueIdFromAttributeOptionLabel('attributeName', 'type', '作業流程') ?>
+
+<?php $productCollection = Mage::getModel('catalog/product')->getCollection()
+    ->addFieldToFilter('type', $typeValueToFilter)
+    ->setOrder('entity_id', 'DESC') ?>
+
+<h2>flow</h2>
+
+<?php foreach ($productCollection as $product): ?>
+    <?php $_product = Mage::getModel('catalog/product')->load($product->getId()) ?>
+    <div>
+        <?php echo $_product->getName() ?>
+    </div>
+<?php endforeach ?>

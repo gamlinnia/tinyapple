@@ -37,6 +37,9 @@
 	cursor: pointer;
 	z-index: 9999;
 }
+#PageTopBtn img {
+	opacity: 0;
+}
 
 .dial {
 	cursor: text;
@@ -161,6 +164,9 @@
 		font-size: .9rem;
 		line-height: 1em;
 		color: #555;
+	}
+	#main-nav li a > span:last-child {
+		font-family: "Noto Sans CJK TC", "微軟正黑體", "Microsoft JhengHei", Helvetica Neue, Helvetica, Arial, sans-serif; 
 	}
 	#main-nav li a > .fa-home {
 		font-size: 24px;
@@ -331,8 +337,46 @@
 	footer a {
 		color: #fcfcfc;
 	}
+
+	#footer-nav ul {
+		margin: 1.5em auto;
+		padding: 0;
+	}
+
+	#footer-nav li {
+		display: inline-block;
+		vertical-align: middle;
+		list-style: none;
+		width: calc(100% / 5);
+		min-height: 50px;
+		text-align: center;
+	}
+	#footer-nav li:nth-child(n+2){
+		background: url(../images/white-line01.jpg) no-repeat center left;
+	}
+	#footer-nav li:hover a {
+		color: #f39c12;
+	}
+	#footer-nav li a {
+		font-size: 1.1rem;
+	}
+	#footer-nav li a > span {
+		display: block;
+		font-size: .9rem;
+		line-height: 1em;
+	}
+	#footer-nav li a span:last-child{
+		font-family: "Noto Sans CJK TC", "微軟正黑體", "Microsoft JhengHei", Helvetica Neue, Helvetica, Arial, sans-serif; 
+	}
+	#footer-nav li a span.fa-home {
+		font-size: 24px	;
+	}
+
 	#copyright p {
 		font-size: .88rem;
+		text-align: center;
+		line-height: 1rem;
+		margin: .5em;
 	}
 	#copyright .address {
 		color: #ccc;
@@ -355,10 +399,15 @@
 		background: rgba(198, 223, 255, .3);
 	}
 
+	#footer-ad a {
+		font-size: 1rem;
+	}
+
 	#footer-ad p {
 		display: block;
 		width: 100%;
 		margin: 0;
+		text-align: right;
 	}
 
 	footer .askprice, #footer-ad p {
@@ -539,12 +588,42 @@
 	    position: absolute;
 	    bottom: 10px;
 	    height: auto;
+	    padding: 5px .5rem;
 	}
 	#main-nav {
 		margin-top: 110px;
 	}
 	
 }
+
+@media only screen and (max-width: 640px) {
+	#footer-logo, #footer-ad {
+		display: block;
+		float: none;
+		height: auto;
+		text-align: left;
+	}
+	#footer-ad p {
+		text-align: left;
+	}
+	#footer-logo a {
+		line-height: 2em;
+	}
+	#footer-nav li a {
+		font-size: .88rem;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	#footer-nav li {
+		display: block;
+		width: 100%;
+	}
+	#footer-nav li:nth-child(n+2) {
+		background: none;
+	}
+}
+
 @media only screen and (max-width: 375px) {
 	.askprice span, .ad-block > a.phone-no, .ad-block > a.phone-no > span{
 		font-size: .8rem;

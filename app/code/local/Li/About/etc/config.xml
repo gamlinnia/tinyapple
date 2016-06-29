@@ -23,7 +23,7 @@
                 <use>standard</use>
                 <args>
                     <module>Li_About</module>
-                    <frontName>about</frontName>
+                    <frontName>aboutus</frontName>
                 </args>
             </about>
         </routers>
