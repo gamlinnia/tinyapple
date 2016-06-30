@@ -3,6 +3,14 @@
 class Li_Works_Block_Content extends Mage_Core_Block_Template
 {
 
+    public function getProduct () {
+        return Mage::getModel('catalog/product')->load($this->getProductId());
+    }
+
+    public function getProductId () {
+        return $this->getRequest()->getParam('id');
+    }
+
     public function getResizedImage($type, $imgFileName, $width, $height = null, $quality = 100) {
         $pathinfo = pathinfo($imgFileName);
         $newFileName = $pathinfo['filename'] . '_' . $width .  '.' . strtolower($pathinfo['extension']);

@@ -5,6 +5,9 @@
     ->addFieldToFilter('type', $typeValueToFilter)
     ->setOrder('entity_id', 'DESC') ?>
 
+
+<?php echo $this->getChildHtml('breadcrumbs') ?>
+
 <h2>completed</h2>
 
 <?php foreach ($productCollection as $product): ?>

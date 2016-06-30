@@ -1,6 +1,9 @@
 <?php $categoryCollection = Mage::getModel('catalog/category')->getCollection()
     ->addAttributeToSelect('*')
     ->addFieldToFilter('level', 2) ?>
+
+<?php echo $this->getChildHtml('breadcrumbs') ?>
+
 <?php foreach ($categoryCollection as $category): ?>
     <div>
         <?php echo $category->getName() ?>

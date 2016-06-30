@@ -1,1 +1,15 @@
+
+
+<?php echo $this->getChildHtml('breadcrumbs') ?>
+
 <h2>completed</h2>
+
+
+<?php echo $this->getProductId() ?>
+<?php $_product = $this->getProduct() ?>
+<?php $mediaGallery = $_product->getMediaGalleryImages() ?>
+<?php var_dump($mediaGallery) ?>
+
+<?php foreach ($mediaGallery as $_media): ?>
+    <img src="<?php echo $_media->getUrl() ?>">
+<?php endforeach ?>
