@@ -1,15 +1,13 @@
-<div id="main-bg">
+<div class="main-bg">
 	<div id="page-banner">
-		
 	</div>
 	<div id="main01">
 		<div class="slogan">您的想法，我們來實現</div>
 		
 		<div id="page-wrap">
-			<ul class="breadcrumbs">
-				<li><a href="index.html"><span class="fa fa-home"></span></a> / </li>
-				<li><a href="#" class="current">公司簡介</a></li>
-			</ul>
+
+			<!-- breadcrumbs -->
+			<?php echo $this->getChildHtml('breadcrumbs') ?>
 			
 			<div id="page-content">
 				<h1 class="page-title">小蘋果工程</h1>
@@ -17,11 +15,11 @@
 				<div class="aboutus-content">
 					<div class="aboutus-context">
 						<p class="p-style01">專門負責台中 / 彰化 / 南投 ， 浴室整修、透天厝、公寓整修工程。</p>
-						<p>我們的足跡遍佈整個大台中，我們不僅僅是施工廠商，更可以在設計上提供您不同的參考意見。<br>
-							舉凡水電規劃、浴廁、廚房、空間隔間、外推、整建等施工，皆是我們的專業。<br>
+						<p>我們的足跡遍佈整個大台中，我們不僅僅是施工廠商，更可以在設計上提供您不同的參考意見。
+							舉凡水電規劃、浴廁、廚房、空間隔間、外推、整建等施工，皆是我們的專業。<br><br>
 							讓您放心將案子交付給我們，讓我們將您心中的藍圖完美呈現。</p>
 					</div>
-					<img src="<?php echo $this->getSkinUrl('tinyapple/images/about/company.jpg') ?>" alt="" >
+					<img src="<?php echo $this->getSkinUrl('tinyapple/images/about/company.jpg') ?>" alt="" class="pic">
 				</div>
 			</div><!-- end of page-content -->
 		</div><!--end of page-wrap -->

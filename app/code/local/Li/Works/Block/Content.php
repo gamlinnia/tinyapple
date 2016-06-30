@@ -7,8 +7,27 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
         return Mage::getModel('catalog/product')->load($this->getProductId());
     }
 
+    public function getFlowProduct ($typeName, $categoryName) {
+        return Mage::getModel('catalog/product')->getCollection()
+            ->addAttributeToSelect('name')
+            ->addFieldToFilter('type', $this->getProductTypeId($typeName))
+            ->addFieldToFilter('name', array('like' => "%$categoryName%"))
+            ->setOrder('entity_id', 'DESC')
+            ->getFirstItem();
+    }
+
+    public function getProductTypeId ($typeName) {
+        return Mage::helper('homepage/data')->getOptionValueIdFromAttributeOptionLabel('attributeName', 'type', $typeName);
+    }
+
     public function getProductId () {
         return $this->getRequest()->getParam('id');
+    }
+
+    public function getCategoryCollection () {
+        return Mage::getModel('catalog/category')->getCollection()
+            ->addAttributeToSelect('*')
+            ->addFieldToFilter('level', 2);
     }
 
     public function getResizedImage($type, $imgFileName, $width, $height = null, $quality = 100) {
@@ -19,6 +38,12 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
                 $_media_dir = Mage::getBaseDir(Mage_Core_Model_Store::URL_TYPE_MEDIA) . DS . 'catalog' . DS . 'category' . DS;
                 $cache_dir = $_media_dir . 'resize' . DS;
                 $_media_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'catalog' . DS . 'category' . DS;
+                $cache_url = $_media_url . 'resize' . DS;
+                break;
+            case 'product':
+                $_media_dir = Mage::getBaseDir(Mage_Core_Model_Store::URL_TYPE_MEDIA) . DS . 'catalog' . DS . 'product' . DS;
+                $cache_dir = $_media_dir . 'resize' . DS;
+                $_media_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'catalog' . DS . 'product' . DS;
                 $cache_url = $_media_url . 'resize' . DS;
                 break;
         }

@@ -19,7 +19,7 @@
 
         <reference name="content">
             <block type="homepage/html_header" name="custom_header" />
-            <block type="works/content" name="works_content" template="li_works/flow_list.phtml">
+            <block type="works/content" name="works_content" template="li_works/flow.phtml">
                 <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs" />
             </block>
             <block type="homepage/html_footer" name="custom_footer" />

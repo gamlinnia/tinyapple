@@ -3,3 +3,14 @@
 <?php echo $this->getChildHtml('breadcrumbs') ?>
 
 <h2>flow</h2>
+
+<?php echo $this->getProductId() ?>
+<?php $_product = $this->getProduct() ?>
+<?php $mediaGallery = $_product->getMediaGalleryImages() ?>
+<?php // var_dump($mediaGallery) ?>
+
+<?php foreach ($mediaGallery as $_media): ?>
+    <img src="<?php echo $this->getResizedImage('product', $_media->getFile(), 416) ?>">
+    <?php echo $_media->getLabel() ?>
+    <?php echo $_media->getPosition() ?>
+<?php endforeach ?>

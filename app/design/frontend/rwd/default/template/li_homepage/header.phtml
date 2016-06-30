@@ -15,11 +15,11 @@
 
         <nav id="main-nav" class="right animate">
             <ul class="clearfix">
-                <li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>aboutus">公司簡介<span>About</span></a></li>
-                <li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>services">服務項目<span>Service</span></a></li>
-                <li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>works">作品展示<span>Works</span></a></li>
-                <li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>contact">聯絡我們<span>Contact Us</span></a></li>
-                <li class="mainShow"><a href="<?php echo Mage::getBaseUrl() ?>"><span class="fa fa-home"></span><span>Home</span></a></li>
+                <li class="mainShow <?php echo $this->getMenuClass('about') ?>"><a href="<?php echo Mage::getBaseUrl() ?>aboutus">公司簡介<span>About</span></a></li>
+                <li class="mainShow <?php echo $this->getMenuClass('service') ?>"><a href="<?php echo Mage::getBaseUrl() ?>services">服務項目<span>Service</span></a></li>
+                <li class="mainShow <?php echo $this->getMenuClass('works') ?>"><a href="<?php echo Mage::getBaseUrl() ?>works">作品展示<span>Works</span></a></li>
+                <li class="mainShow <?php echo $this->getMenuClass('contact') ?>"><a href="<?php echo Mage::getBaseUrl() ?>contact">聯絡我們<span>Contact Us</span></a></li>
+                <li class="mainShow <?php echo $this->getMenuClass('cms') ?>"><a href="<?php echo Mage::getBaseUrl() ?>"><span class="fa fa-home"></span><span>Home</span></a></li>
             </ul>
         </nav><!-- end of main-nav -->
 

@@ -50,12 +50,12 @@ class Li_Homepage_Helper_Data extends Mage_Core_Helper_Abstract
         return null;
     }
 
-    public function getControllerUrl () {
-        return Mage::getBaseUrl() . $this->getRouterName() . DS . $this->getControllerName() . DS;
-    }
-
     public function getRouterUrl () {
         return Mage::getBaseUrl() . $this->getRouterName() . DS;
+    }
+
+    public function getControllerUrl () {
+        return Mage::getBaseUrl() . $this->getRouterName() . DS . $this->getControllerName() . DS;
     }
 
     public function getRouterName () {

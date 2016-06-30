@@ -36,6 +36,10 @@
 
         <update handle="tinyapple_insidepage" />
 
+        <reference name="root">
+            <action method="addBodyClass"><classname>outer-bg01</classname></action>
+        </reference>
+
         <reference name="content">
             <block type="homepage/html_header" name="custom_header" />
             <block type="about/content" name="about_content" template="li_about/content.phtml">
