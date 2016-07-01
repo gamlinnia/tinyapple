@@ -65,7 +65,8 @@
 		1px -1px 0 #fff,
 		-1px 1px 0 #fff,
 		1px 1px 0 #fff;
-	padding: 2.5em 0 1.5em 0;
+	padding: 2.5em .5em 1.5em .5em;
+	margin: 0 auto;
 }
 
 #main01 #page-wrap {
@@ -95,10 +96,11 @@
 	margin: 0 auto;
 }
 
-.aboutus-content, .services-content {
+.aboutus-content, .services-content, .contact-content {
 	padding: 1.2rem 0.2rem;
 }
-.aboutus-content .aboutus-context, .aboutus-content .pic {
+.aboutus-content .aboutus-context, .aboutus-content .pic,
+.contact-content .contact-ad, .contact-content .contact-info{
 	display: inline-block;
 	vertical-align: top;
 	width: 48%;
@@ -119,6 +121,92 @@
 	font-size: 1.1rem;
 	color: #002658;
 }
+
+/* works start */
+.main02-bg #page-banner {
+	background: url(../images/page-bg/page-banner-01.jpg) no-repeat top center;
+	text-align: center;
+}
+.main02-bg .page-title {
+	font-size: 1.5rem;
+	color: #fff;
+	font-weight: normal;
+}
+.main02-bg .page-title:before, .main02-bg .page-title:after {
+    content: "";
+    display: inline-block;
+    width: 52px;
+    height: 1px;
+    line-height: 2em;
+    background: #fff;
+    margin: .4em 1.5em;
+}
+
+aside, #page-main {
+	display: inline-block;
+	vertical-align: top;
+}
+aside {
+	width: 214px;
+	background: #e9edf1;
+}
+aside ul {
+	padding: 0;
+	margin: 0;
+}
+aside li {
+	list-style-type: none;
+}
+aside li a {
+	display: block;
+	margin: 0rem .7rem;
+	font-size: 1.2rem;
+	line-height: 3em;
+	border-bottom: 1px dashed #a6bbd2;
+}
+aside li a:before {
+    content: "";
+    display: inline-block;
+    display: middle;
+    width: 15px;
+    height: 15px;
+    background: #23446f;
+    margin-right: .5em;
+    margin-left: .5em;
+	-webkit-transition: .5s ease;
+	-ms-transition: .5s ease;
+	transition: .5s ease;
+}
+aside li:hover a:before {
+	-moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+	transform: rotate(45deg);
+	background: #6e84a2;
+	-webkit-transition: .5s ease;
+	-ms-transition: .5s ease;
+	transition: .5s ease;
+}
+aside .submenu {
+	background: #d5dee7;
+}
+aside .submenu li a {
+	border-bottom: none;
+	margin: 0 2.5rem;
+	font-size: .9rem;
+	line-height: 2.6em;
+}
+aside .submenu li a:before {
+	width: 3px;
+	height: 3px;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border: 0px solid #000000;
+}
+
+/* works end */
 
 
 
@@ -171,8 +259,53 @@
 	margin-right: 1em;
 }
 
+
+.contact-ad {
+	padding: .5em;
+}
+.contact-ad, .contact-ad  a {
+	text-align: center;
+	background: #002658;
+	color: #fcf8f2;
+}
+.contact-ad p:last-child {
+	font-size: 1.2rem;
+}
+.contact-ad .dial {
+	font-size: 1.2rem;
+	padding-left: .5em;
+}
+
+.contact-info li {
+	list-style-type: none;
+	color: #333;
+}
+.contact-info li span {
+	display: inline-block;
+	vertical-align: middle;
+}
+.contact-info li span:first-child {
+	padding-right: .5em;
+}
+.contact-info li .dial {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
 /* main01 end */
 
+@media only screen and (max-width: 970px) {
+	.services-pics img {
+		max-width: 70%;
+	}
+	.services-pics img:nth-child(2) {
+		right: 4em;
+	}
+
+	.contact-info {
+		padding-left: 1rem;
+	}
+}
 
 @media only screen and (max-width: 760px) {
 	.aboutus-content .aboutus-context, .aboutus-content .pic {
@@ -183,6 +316,37 @@
 	.aboutus-content .aboutus-context {
 		margin-right: 0;
 	}
+
+	.services-list, .services-pics {
+		display: block;
+		width: 100%;
+		margin: auto 0 auto 0;
+	}
+	.services-content, .services-list {
+		position: relative;
+	}
+	.services-list {
+		z-index: 5;
+	}
+	.services-pics {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		opacity: .3;
+	}
+	.services-pics img {
+		max-width: 55%;
+	}
+	.contact-content .contact-ad, .contact-content .contact-info{
+		display: block;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	#main01 .slogan {
+		font-size: 1.5rem;
+	}
 }
 
 @media only screen and (max-width: 480px) {
@@ -192,8 +356,21 @@
 	#main01 .page-title:before, #main01 .page-title:after {
 		width: 1rem;
 	}
+	.contact-info li:last-child span:last-child {
+		font-size: 12px;
+	}
 }
 
 @media only screen and (max-width: 375px) {
+	#main01 .slogan {
+		font-size: 1.3rem;
+	}
+	.contact-info li span img {
+		width: 20px;
+		height: 20px;
+	}
 
+	.contact-info li span:first-child {
+		padding-right: .3em;
+	}
 }

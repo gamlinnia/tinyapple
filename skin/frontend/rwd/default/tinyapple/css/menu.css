@@ -403,6 +403,10 @@
 		font-size: 1rem;
 	}
 
+	#footer-ad .dial {
+		font-size: 1.5rem;
+	}
+
 	#footer-ad p {
 		display: block;
 		width: 100%;
@@ -469,8 +473,14 @@
 	    right: .5rem;
 	    bottom: -18px;
 	    width: 90px;
-	    background-color: #405c82;
-	    background-repeat: repeat-x;
+		background: rgba(82,119,168,1);
+		background: -moz-linear-gradient(top, rgba(82,119,168,1) 0%, rgba(64,92,130,1) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(82,119,168,1)), color-stop(100%, rgba(64,92,130,1)));
+		background: -webkit-linear-gradient(top, rgba(82,119,168,1) 0%, rgba(64,92,130,1) 100%);
+		background: -o-linear-gradient(top, rgba(82,119,168,1) 0%, rgba(64,92,130,1) 100%);
+		background: -ms-linear-gradient(top, rgba(82,119,168,1) 0%, rgba(64,92,130,1) 100%);
+		background: linear-gradient(to bottom, rgba(82,119,168,1) 0%, rgba(64,92,130,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5277a8', endColorstr='#405c82', GradientType=0 );
 	    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	    border-radius: 4px 4px 4px 4px;
 	    color: #FFF;

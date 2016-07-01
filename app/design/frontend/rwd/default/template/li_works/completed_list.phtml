@@ -1,9 +1,5 @@
-<?php $typeValueToFilter = $this->helper('homepage/data')
-    ->getOptionValueIdFromAttributeOptionLabel('attributeName', 'type', '完工作品') ?>
+<?php $productCollection = $this->getCompletedProducts('完工作品') ?>
 
-<?php $productCollection = Mage::getModel('catalog/product')->getCollection()
-    ->addFieldToFilter('type', $typeValueToFilter)
-    ->setOrder('entity_id', 'DESC') ?>
 
 
 <?php echo $this->getChildHtml('breadcrumbs') ?>
@@ -13,11 +9,11 @@
 <?php foreach ($productCollection as $product): ?>
     <?php $_product = Mage::getModel('catalog/product')->load($product->getId()) ?>
     <div>
+        <div><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>" /></div>
         <a href="<?php echo $this->helper('works/data')->getWorksUrl($_product) ?>">
             <?php echo $_product->getName() ?>
         </a>
         <?php echo $_product->getId() ?>
-        <br />
-        <?php echo $_product->getName() ?>
     </div>
+    <br />
 <?php endforeach ?>

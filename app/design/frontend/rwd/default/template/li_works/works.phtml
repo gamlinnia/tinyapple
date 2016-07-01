@@ -1,29 +1,62 @@
 <?php $categoryCollection = $this->getCategoryCollection() ?>
 
-
-
-<?php echo $this->getChildHtml('breadcrumbs') ?>
-
-<?php foreach ($categoryCollection as $category): ?>
-    <div>
-        <?php echo $category->getName() ?>
-
-        <?php if ($category->getImage()): ?>
-            <img src="<?php echo $this->getResizedImage('category', $category->getImage(), 416) ?>" />
-        <?php endif ?>
-
-        <?php $product = $this->getFlowProduct('作業流程', $category->getName()) ?>
-        <?php if ($product->getId()): ?>
-            <a href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>flow/index/id/<?php echo $product->getId() ?>">作業流程</a>
-        <?php endif ?>
-
-        <a href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed">完工作品</a>
-        <?php // Zend_Debug::dump($category->getData()) ?>
+<div class="main02-bg">
+    <div id="page-banner" class="for-v-middle">
+        <h1 class="page-title">作品展示</h1>
     </div>
-    <br />
-<?php endforeach ?>
+    <div id="main01">
+        <div id="page-wrap">
+            <!-- breadcrumbs -->
+            <?php echo $this->getChildHtml('breadcrumbs') ?>
+            
+            <div id="page-content">
+                <aside>
+                    <ul>
+                        <?php foreach ($categoryCollection as $category): ?>
+                            <li>
+                                <a href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed/index/category_id/<?php echo $category->getId() ?>"><?php echo $category->getName() ?></a>
+                                <ul class="submenu">
+                                    <li><a href="#">作業流程</a></li>
+                                    <li><a href="#">完工作品</a></li>
+                                </ul>
+                            </li>
+                        <?php endforeach ?>
+                    </ul>
+                </aside>
 
+                <div id="page-main">
 
+                    <div class="works-list">
+
+                        <?php foreach ($categoryCollection as $category): ?>
+
+                            <div class="work-item">
+                                <?php if ($category->getImage()): ?>
+                                    <div class="pic">
+                                        <img src="<?php echo $this->getResizedImage('category', $category->getImage(), 416) ?>" alt="" />
+                                    </div>
+                                <?php endif ?>
+
+                                <div class="title"><?php echo $category->getName() ?></div>
+                                <div class="btns">
+                                    <?php $product = $this->getFlowProduct('作業流程', $category->getName()) ?>
+                                    <?php if ($product->getId()): ?>
+                                        <a class="btn" href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>flow/index/id/<?php echo $product->getId() ?>">作業流程</a>
+                                    <?php endif ?>
+                                    <a class="more-btn" href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed/index/category_id/<?php echo $category->getId() ?>">完工作品</a>
+
+                                </div>
+                            </div><!-- end of work-item -->
+
+                        <?php endforeach ?>
+
+                    </div><!-- end of works-list -->
+                </div>
+               
+            </div><!-- end of page-content -->
+        </div><!--end of page-wrap -->
+    </div><!-- end of main01 -->
+</div><!-- end of main-bg -->
 
 
 

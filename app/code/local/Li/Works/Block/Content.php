@@ -16,12 +16,23 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
             ->getFirstItem();
     }
 
+    public function getCompletedProducts ($typeName) {
+        return $productCollection = Mage::getModel('catalog/category')->load($this->getCategoryId())
+            ->getProductCollection()
+            ->addFieldToFilter('type', $this->getProductTypeId($typeName))
+            ->setOrder('entity_id', 'DESC');
+    }
+
     public function getProductTypeId ($typeName) {
         return Mage::helper('homepage/data')->getOptionValueIdFromAttributeOptionLabel('attributeName', 'type', $typeName);
     }
 
     public function getProductId () {
         return $this->getRequest()->getParam('id');
+    }
+
+    public function getCategoryId () {
+        return $this->getRequest()->getParam('category_id');
     }
 
     public function getCategoryCollection () {
