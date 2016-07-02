@@ -8,13 +8,14 @@
         <div id="page-wrap">
             <!-- breadcrumbs -->
             <?php echo $this->getChildHtml('breadcrumbs') ?>
-            
+
             <div id="page-content">
                 <aside>
+                    <a href="#" id="submenu-btn">作品展示選單<span class="fa fa-chevron-down"></span></a>
                     <ul>
                         <?php foreach ($categoryCollection as $category): ?>
                             <li>
-                                <a href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed/index/category_id/<?php echo $category->getId() ?>"><?php echo $category->getName() ?></a>
+                                <a href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed/index/category_id/<?php echo $category->getId() ?>"><?php echo $category->getName() ?><span class="fa fa-angle-down"></span></a>
                                 <ul class="submenu">
                                     <li><a href="#">作業流程</a></li>
                                     <li><a href="#">完工作品</a></li>
@@ -29,30 +30,30 @@
                     <div class="works-list">
 
                         <?php foreach ($categoryCollection as $category): ?>
-
-                            <div class="work-item">
-                                <?php if ($category->getImage()): ?>
-                                    <div class="pic">
-                                        <img src="<?php echo $this->getResizedImage('category', $category->getImage(), 416) ?>" alt="" />
-                                    </div>
-                                <?php endif ?>
-
-                                <div class="title"><?php echo $category->getName() ?></div>
-                                <div class="btns">
-                                    <?php $product = $this->getFlowProduct('作業流程', $category->getName()) ?>
-                                    <?php if ($product->getId()): ?>
-                                        <a class="btn" href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>flow/index/id/<?php echo $product->getId() ?>">作業流程</a>
+                            <?php if ($is_active = $category->getData('is_active')): ?>
+                                <div class="work-item clearfix">
+                                    <?php if ($category->getImage()): ?>
+                                        <div class="pic">
+                                            <img src="<?php echo $this->getResizedImage('category', $category->getImage(), 416) ?>" alt="" />
+                                        </div>
                                     <?php endif ?>
-                                    <a class="more-btn" href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed/index/category_id/<?php echo $category->getId() ?>">完工作品</a>
-
-                                </div>
-                            </div><!-- end of work-item -->
-
+                                    <div class="work-item-right">
+                                        <div class="title"><?php echo $category->getName() ?></div>
+                                        <div class="btns">
+                                            <?php $product = $this->getFlowProduct('作業流程', $category->getName()) ?>
+                                            <?php if ($product->getId()): ?>
+                                                <a class="more-btn" href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>flow/index/id/<?php echo $product->getId() ?>">作業流程</a>
+                                            <?php endif ?>
+                                            <a class="more-btn" href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed/index/category_id/<?php echo $category->getId() ?>">完工作品</a>
+                                        </div>
+                                    </div>
+                                </div><!-- end of work-item -->
+                            <?php endif ?>
                         <?php endforeach ?>
 
                     </div><!-- end of works-list -->
                 </div>
-               
+
             </div><!-- end of page-content -->
         </div><!--end of page-wrap -->
     </div><!-- end of main01 -->

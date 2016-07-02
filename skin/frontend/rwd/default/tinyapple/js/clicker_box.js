@@ -110,10 +110,18 @@
 				TARGET: false, // 操作目標 (false,.class,#id)
 				RANGE: [false,999], // 依照解析度啟動 (最小,最大)
 			});
-
-
+			jQuery("#submenu-btn").clicker_box ({
+				ACTIVE: "active", // 切換內容
+				ATR: "class", // 操作參數
+				TARGET: false, // 操作目標 (false,.class,#id)
+				RANGE: [false,999], // 依照解析度啟動 (最小,最大)
+			});
+			jQuery("aside > ul > li > a").clicker_box ({
+				ACTIVE: "active", // 切換內容
+				ATR: "class", // 操作參數
+				TARGET: false, // 操作目標 (false,.class,#id)
+				RANGE: [false,999], // 依照解析度啟動 (最小,最大)
+			});
 		});
-		
-
 
 

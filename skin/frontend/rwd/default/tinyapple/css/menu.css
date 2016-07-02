@@ -20,6 +20,7 @@
 	color: #fff;
 	text-align: center;
 	background: rgba(0, 38, 88, .8);
+	-moz-transition: .5s ease;
 	-webkit-transition: .5s ease;
 	-ms-transition: .5s ease;
 	transition: .5s ease;
@@ -28,6 +29,7 @@
 	-webkit-transform: translate(0px, -2px);
 	transform: translate(0px, -2px);
 	background: rgba(0, 38, 88, 1);
+	-moz-transition: .5s ease;
 	-webkit-transition: .5s ease;
 	-ms-transition: .5s ease;
 	transition: .5s ease;
@@ -60,6 +62,7 @@
 
 .ad-block > a.phone-no, .ad-block:hover a.phone-no {
 	-webkit-transition: .7s ease;
+	-moz-transition: .7s ease;
 	-ms-transition: .7s ease;
 	transition: .7s ease;
 }
@@ -174,10 +177,12 @@
 	#main-nav li a, #main-nav li a > span,
 	#main-nav li:hover a, #main-nav li:hover a > span {
 		-webkit-transition: 0.5s ease;
+		-moz-transition: 0.5s ease;
 		-ms-transition: 0.5s ease;
 		transition: 0.5s ease;
 	}
-	#main-nav .current a, #main-nav li:hover a, #main-nav li:hover a > .fa-home {
+	#main-nav .current a, #main-nav li:hover a,
+	#main-nav li:hover a > .fa-home, #main-nav .current a > .fa-home {
 		color: #d35400;
 	}
 	#main-nav .current a > span, #main-nav li:hover a > span {

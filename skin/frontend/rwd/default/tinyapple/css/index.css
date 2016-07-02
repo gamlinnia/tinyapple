@@ -49,12 +49,14 @@
 	background: rgba(255, 255, 255, .2);
 	opacity: 0;
 	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
 	-ms-transition: .3s ease;
 	transition: .3s ease;
 }
 #idx-bn-slide .slick-slide:hover:before {
 	opacity: 1;
 	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
 	-ms-transition: .3s ease;
 	transition: .3s ease;
 }
@@ -274,6 +276,8 @@
 }
 
 #idx-works-slide .newer-item .newer-item-text {
+	-ms-transition-delay: .7s;
+	-moz-transition-delay: .7s;
 	-webkit-transition-delay: .7s;
 	transition-delay: .7s;
 }
@@ -284,6 +288,7 @@
 #idx-works-slide .newer-item .newer-item-text .fa-link{
 	-webkit-transition: .7s ease;
 	-ms-transition: .7s ease;
+	-moz-transition: .7s ease;
 	transition: .7s ease;
 }
 #idx-works-slide .newer-item:hover img,
@@ -291,6 +296,7 @@
 #idx-works-slide .newer-item:hover .newer-item-text .fa-link{
     -webkit-transition: .3s ease;
 	-ms-transition: .3s ease;
+	-moz-transition: .3s ease;
 	transition: .3s ease;
 }
 

@@ -146,9 +146,9 @@
             window_width: 0,
             init: function (target) {
                 this.runMainBannerSlider(target, this.calcPartialImageWidth());
-                this.resizeMainBannerSlider(target, this.calcPartialImageWidth());
             },
             runMainBannerSlider: function (target, centerPadding) {
+                console.log('centerPadding', centerPadding);
                 jQuery(target).slick({
                     arrows: true,
                     adaptiveHeight: true,
