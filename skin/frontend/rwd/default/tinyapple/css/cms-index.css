@@ -333,6 +333,68 @@ aside .submenu li a:before {
 .work-item .pic img {
 	display: block;
 }
+
+.completed-item {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: calc(97% / 3 - 4px);
+	margin: 0 .5% 1.5rem .5%;
+	overflow: hidden;
+}
+.completed-item .pic img {
+	display: block;
+	width: 100%;
+}
+.completed-item .completed-item-text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: auto;
+	line-height: 1.2rem;
+	font-size: .88rem;
+	padding: 1.2rem .5rem;
+	text-align: center;
+	background: rgba(255, 255, 255, .4);
+}
+.completed-item .completed-item-text .fa-link {
+	display: none;
+	font-size: 25px;
+}
+.completed-item:hover .completed-item-text .fa-link{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.completed-item:hover img {
+	-moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.3);
+}
+.completed-item:hover .completed-item-text {
+	height: 100%;
+	display: -webkit-flex;
+	display:         flex;
+	-webkit-align-items: center;
+		align-items: center;
+	-webkit-justify-content: center;
+		justify-content: center;
+}
+.completed-item img {
+	-webkit-transition: .7s ease;
+	-ms-transition: .7s ease;
+	-moz-transition: .7s ease;
+	transition: .7s ease;
+}
+.completed-item:hover img {
+    -webkit-transition: .3s ease;
+	-ms-transition: .3s ease;
+	-moz-transition: .3s ease;
+	transition: .3s ease;
+}
 /* works end */
 
 
@@ -453,6 +515,9 @@ aside .submenu li a:before {
 		background: linear-gradient(to bottom, rgba(87,134,189,1) 0%, rgba(73,106,149,1) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5786bd', endColorstr='#496a95', GradientType=0 );
 		color: #fff;
+		-webkit-box-shadow: 2px 1px 3px 0px rgba(147,151,171,1);
+		-moz-box-shadow: 2px 1px 3px 0px rgba(147,151,171,1);
+		box-shadow: 2px 1px 3px 0px rgba(147,151,171,1);
 	}
 	aside, #page-main {
 		display: block;
@@ -481,10 +546,18 @@ aside .submenu li a:before {
 	
 	.work-item {
 		background: #bdcee2;
+	    border: 1px solid #4c6f9c;
+	}
+	.work-item .pic:before {
+		display: none;
 	}
 	.work-item .pic, .work-item .work-item-right {
 		display: block;
 		margin: 1em auto 1em auto;
+	}
+	.work-item .pic{
+		margin: 2% auto;
+		max-width: 96%;
 	}
 	.work-item .work-item-right {
 		margin-left: auto;
@@ -544,6 +617,12 @@ aside .submenu li a:before {
 		font-size: 1.4rem;
 	}
 	#main01 .page-title:before, #main01 .page-title:after {
+		width: 1rem;
+	}
+	.main02-bg .page-title {
+		font-size: 1.3rem;
+	}
+	.main02-bg .page-title:before, .main02-bg .page-title:after {
 		width: 1rem;
 	}
 	.contact-info li:last-child span:last-child {

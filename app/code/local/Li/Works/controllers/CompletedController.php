@@ -8,6 +8,8 @@ class Li_Works_CompletedController extends Mage_Core_Controller_Front_Action
 
         $this->getLayout()->getBlock('head')->setTitle('小蘋果工程-作品展示');
 
+        $block=$this->getLayout()->createBlock('works/content');
+
         if ($breadcrumbsBlock = $this->getLayout()->getBlock('breadcrumbs')) {
             $breadcrumbsBlock
                 ->addCrumb('home', array(
@@ -17,10 +19,12 @@ class Li_Works_CompletedController extends Mage_Core_Controller_Front_Action
                 ->addCrumb('works', array(
                     'label'    => '作品展示',
                     'link'     => Mage::helper('homepage/data')->getRouterUrl()
-                ))->addCrumb('reviews', array(
-                    'label' => '完工作品'
+                ))->addCrumb('completed', array(
+                    'label' => $block->getWorkPageTitle(false)
                 ));
         }
+
+
 
         $this->renderLayout();
     }
@@ -43,8 +47,8 @@ class Li_Works_CompletedController extends Mage_Core_Controller_Front_Action
                     'link'     => Mage::helper('homepage/data')->getRouterUrl()
                 ))
                 ->addCrumb('completed', array(
-                    'label' => '完工作品',
-                    'link' => Mage::helper('homepage/data')->getControllerUrl()
+                    'label' => $block->getWorkPageTitle(false),
+                    'link' => Mage::helper('homepage/data')->getControllerUrl() . 'index/category_id/' . $block->getCategoryId()
                 ))
                 ->addCrumb('work_detail', array(
                     'label' => $block->getProduct()->getName()

@@ -1,5 +1,3 @@
-<?php $typeValueToFilter = $this->helper('homepage/data')->getOptionValueIdFromAttributeOptionLabel('attributeName', 'type', '完工作品') ?>
-<?php $productCollection = Mage::getModel('catalog/product')->getCollection()->setOrder('entity_id', 'DESC')->addFieldToFilter('type', $typeValueToFilter) ?>
 
 <div id="content">
     <div id="idx-banner" class="clearfix">
@@ -69,7 +67,7 @@
                             </td>
                             <td class="align-left">
                                 <p>H鋼構增建<br>外牆拉皮<br>外牆、陽台、防水</p>
-                                <a href="<?php echo Mage::getBaseUrl() ?>aboutus" class="more-btn">更多服務</a>
+                                <a href="<?php echo Mage::getBaseUrl() ?>services" class="more-btn">更多服務</a>
                             </td>
                         </tr>
                     </table>
@@ -85,57 +83,10 @@
             <div class="container">
                 <div class="title underline-title">最新作品</div>
 
-                <div id="idx-works-slide" class="slider">
-                    <?php foreach ($productCollection as $product): ?>
-                        <?php $_product = Mage::getModel('catalog/product')->load($product->getId()) ?>
-                        <div class="newer-item">
-                            <div class="item-wrap">
-                                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>" alt="">
-                                <a href="<?php echo Mage::getBaseUrl() ?>works" class="newer-item-text">
-                                    <span>數位噴墨-彰化秀水數位噴墨<span class="fa fa-link"></span></span>
-                                </a>
-                            </div>
-                        </div>
-                    <?php endforeach ?>
-                </div>
+                <?php echo $this->getChildHtml('new_products') ?>
             </div>
             <!-- end of container -->
 
-            <script>
-                jQuery(document).ready(function() {
-                    jQuery('#idx-works-slide').slick({
-                        arrows: false,
-                        adaptiveHeight: true,
-                        autoplay: true,
-                        autoplaySpeed: 3000,
-                        dots: true,
-                        infinite: true,
-                        speed: 500,
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        pauseOnHover: false, 
-                        PauseOnFocus: false,
-                        responsive: [
-                            {
-                                breakpoint: 760,
-                                settings: {
-                                    slidesToShow: 2,
-                                    slidesToScroll: 2
-                                }
-                            },
-                            {
-                                breakpoint: 480,
-                                settings: {
-                                    arrows: true,
-                                    dots: false,
-                                    slidesToShow: 1,
-                                    slidesToScroll: 1
-                                }
-                            }
-                        ]
-                    });
-                })
-            </script>
         </div><!-- end of idx-lower-section -->
     </div><!-- end of idx-content -->
 </div><!-- end of content -->
@@ -153,6 +104,7 @@
                     arrows: true,
                     adaptiveHeight: true,
                     autoplay: true,
+                    autoplaySpeed: 5000,
                     useTransform: false,
                     dots: false,
                     infinite: true,
@@ -160,7 +112,7 @@
                     centerPadding: (centerPadding > 0) ? centerPadding + 'px' : 0,
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    pauseOnHover: false, 
+                    pauseOnHover: false,
                     PauseOnFocus: false
                 });
             },

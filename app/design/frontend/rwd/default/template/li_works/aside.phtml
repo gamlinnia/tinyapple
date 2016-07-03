@@ -1,0 +1,18 @@
+<?php $categoryCollection = $this->getCategoryCollection() ?>
+
+
+<aside>
+    <a href="#" id="submenu-btn">作品展示選單<span class="fa fa-chevron-down"></span></a>
+    <ul>
+        <?php foreach ($categoryCollection as $category): ?>
+            <?php $product = $this->getFlowProduct('作業流程', $category->getName()) ?>
+            <li>
+                <a href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed/index/category_id/<?php echo $category->getId() ?>"><?php echo $category->getName() ?><span class="fa fa-angle-down"></span></a>
+                <ul class="submenu">
+                    <li><a href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>flow/index/id/<?php echo $product->getId() ?>">作業流程</a></li>
+                    <li><a href="<?php echo $this->helper('homepage/data')->getRouterUrl() ?>completed/index/category_id/<?php echo $category->getId() ?>">完工作品</a></li>
+                </ul>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</aside>

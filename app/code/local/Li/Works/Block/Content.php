@@ -32,13 +32,55 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
     }
 
     public function getCategoryId () {
-        return $this->getRequest()->getParam('category_id');
+        if ($this->getRequest()->getParam('category_id')) {
+            return $this->getRequest()->getParam('category_id');
+        }
+        if ($productId = $this->getRequest()->getParam('id')) {
+            $categoryIds = Mage::getModel('catalog/product')->load($productId)->getCategoryIds();
+            return Mage::getModel('catalog/category')->getCollection()
+                ->addAttributeToSelect('*')
+                ->addFieldToFilter('level', 2)
+                ->addFieldToFilter('entity_id', array('in' => $categoryIds))
+                ->getFirstItem()->getId();
+        }
     }
 
     public function getCategoryCollection () {
         return Mage::getModel('catalog/category')->getCollection()
             ->addAttributeToSelect('*')
-            ->addFieldToFilter('level', 2);
+            ->addFieldToFilter('level', 2)
+            ->addFieldToFilter('is_active', 1);
+    }
+
+    public function getWorkPageTitle ($withSpan = true) {
+        $bebug = '';
+        switch (Mage::helper('homepage/data')->getControllerName()) {
+            case 'index':
+                return $bebug . '作品展示';
+            case 'completed':
+                if ($this->getCategoryId()) {
+                    $title = Mage::getModel('catalog/category')->getCollection()
+                        ->addAttributeToSelect('name')
+                        ->addFieldToFilter('entity_id', $this->getCategoryId())
+                        ->getFirstItem()->getName();
+                } else {
+                    $title = 'get no category id';
+                }
+                $subTitle = ' · 完工作品';
+                if (!$withSpan) {
+                    return $bebug . $title . $subTitle;
+                }
+                return $bebug . "<span>$title</span>" . "<span>$subTitle</span>";
+            case 'flow':
+                $subTitle = ' · 作業流程';
+                return $bebug . '作品展示' . $subTitle;
+            default:
+                return 'not defined';
+        }
+    }
+
+    public function getPage () {
+        return $this->getRequest()->getParam('page');
     }
 
     public function getResizedImage($type, $imgFileName, $width, $height = null, $quality = 100) {

@@ -1,0 +1,61 @@
+<?php $typeValueToFilter = $this->helper('homepage/data')
+    ->getOptionValueIdFromAttributeOptionLabel('attributeName', 'type', '完工作品') ?>
+<?php $productCollection = Mage::getModel('catalog/product')->getCollection()
+    ->addFieldToFilter('type', $typeValueToFilter)
+    ->setOrder('entity_id', 'DESC')->setPageSize(9) ?>
+
+<div id="idx-works-slide" class="slider">
+    <?php foreach ($productCollection as $product): ?>
+        <?php $_product = Mage::getModel('catalog/product')->load($product->getId()) ?>
+        <div class="newer-item">
+            <div class="item-wrap">
+                <img src="<?php echo $this->helper('timage')
+                    ->init($this->helper('catalog/image')->init($_product, 'image'))
+                    ->setWidth(300)
+                    ->setHeight(225)
+                    ->crop()
+                    ->resize() ?>" alt="">
+                <a href="<?php echo Mage::getBaseUrl() ?>works" class="newer-item-text">
+                    <span><?php echo $_product->getName() ?><span class="fa fa-link"></span></span>
+                </a>
+            </div>
+        </div>
+    <?php endforeach ?>
+</div>
+
+
+<script>
+    jQuery(document).ready(function() {
+        jQuery('#idx-works-slide').slick({
+            arrows: false,
+            adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            pauseOnHover: false,
+            PauseOnFocus: false,
+            responsive: [
+                {
+                    breakpoint: 760,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        dots: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    })
+</script>

@@ -2,13 +2,27 @@
 
 
 
-<?php echo $this->getChildHtml('breadcrumbs') ?>
-
-<h2>completed</h2>
-
-<?php foreach ($mediaGallery as $_media): ?>
-    <div>
-        <img src="<?php echo $_media->getUrl() ?>">
-        <div><?php echo $_media->getLabel() ?></div>
+<div class="main02-bg">
+    <div id="page-banner" class="for-v-middle">
+        <h1 class="page-title"><?php echo $this->getWorkPageTitle() ?></h1>
     </div>
-<?php endforeach ?>
+    <div id="main01">
+        <div id="page-wrap">
+            <!-- breadcrumbs -->
+            <?php echo $this->getChildHtml('breadcrumbs') ?>
+
+            <div id="page-content">
+                <?php echo $this->getChildHtml('aside') ?>
+
+                <div id="page-main">
+                    <?php foreach ($mediaGallery as $_media): ?>
+                            <img src="<?php echo $this->getResizedImage('product', $_media->getFile(), 416) ?>">
+                            <div><?php echo $_media->getLabel() ?></div>
+                    <?php endforeach ?>
+                </div>
+
+            </div><!-- end of page-content -->
+        </div><!--end of page-wrap -->
+    </div><!-- end of main01 -->
+</div><!-- end of main-bg -->
+

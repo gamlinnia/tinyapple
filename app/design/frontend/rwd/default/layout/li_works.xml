@@ -9,6 +9,7 @@
             <block type="homepage/html_header" name="custom_header" />
             <block type="works/content" name="works_content" template="li_works/works.phtml">
                 <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs" />
+                <block type="works/content" name="aside" as="aside" template="li_works/aside.phtml" />
             </block>
             <block type="homepage/html_footer" name="custom_footer" />
         </reference>
@@ -21,6 +22,7 @@
             <block type="homepage/html_header" name="custom_header" />
             <block type="works/content" name="works_content" template="li_works/flow.phtml">
                 <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs" />
+                <block type="works/content" name="aside" as="aside" template="li_works/aside.phtml" />
             </block>
             <block type="homepage/html_footer" name="custom_footer" />
         </reference>
@@ -33,6 +35,7 @@
             <block type="homepage/html_header" name="custom_header" />
             <block type="works/content" name="works_content" template="li_works/completed_list.phtml">
                 <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs" />
+                <block type="works/content" name="aside" as="aside" template="li_works/aside.phtml" />
             </block>
             <block type="homepage/html_footer" name="custom_footer" />
         </reference>
@@ -45,6 +48,7 @@
             <block type="homepage/html_header" name="custom_header" />
             <block type="works/content" name="works_content" template="li_works/completed.phtml">
                 <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs" />
+                <block type="works/content" name="aside" as="aside" template="li_works/aside.phtml" />
             </block>
             <block type="homepage/html_footer" name="custom_footer" />
         </reference>

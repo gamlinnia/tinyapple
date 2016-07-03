@@ -1,19 +1,43 @@
 <?php $productCollection = $this->getCompletedProducts('完工作品') ?>
+<?php $categoryCollection = $this->getCategoryCollection() ?>
 
-
-
-<?php echo $this->getChildHtml('breadcrumbs') ?>
-
-<h2>completed</h2>
-
-<?php foreach ($productCollection as $product): ?>
-    <?php $_product = Mage::getModel('catalog/product')->load($product->getId()) ?>
-    <div>
-        <div><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>" /></div>
-        <a href="<?php echo $this->helper('works/data')->getWorksUrl($_product) ?>">
-            <?php echo $_product->getName() ?>
-        </a>
-        <?php echo $_product->getId() ?>
+<div class="main02-bg">
+    <div id="page-banner" class="for-v-middle">
+        <h1 class="page-title"><?php echo $this->getWorkPageTitle() ?></h1>
     </div>
-    <br />
-<?php endforeach ?>
+    <div id="main01">
+        <div id="page-wrap">
+            <!-- breadcrumbs -->
+            <?php echo $this->getChildHtml('breadcrumbs') ?>
+
+            <div id="page-content">
+                <?php echo $this->getChildHtml('aside') ?>
+
+                <div id="page-main">
+                    <?php foreach ($productCollection as $product): ?>
+                        <?php $_product = Mage::getModel('catalog/product')->load($product->getId()) ?>
+                        <div class="completed-item">
+                            <div class="pic"><img src="<?php
+                                echo $this->helper('timage')
+                                    ->init($this->helper('catalog/image')->init($_product, 'image'))
+                                    ->setWidth(305)
+                                    ->setHeight(305)
+                                    ->crop()
+                                    ->resize()
+                                ?>" /></div>
+                            <a href="<?php echo $this->helper('works/data')->getWorksUrl($_product) ?>" class="completed-item-text">
+                                <span>
+                                <span class="fa fa-link"></span>
+                                    <?php echo $_product->getName() ?>
+                                </span>
+                            </a>
+                        </div><!-- end of completed-item -->
+                    <?php endforeach ?>
+                </div>
+
+            </div><!-- end of page-content -->
+        </div><!--end of page-wrap -->
+    </div><!-- end of main01 -->
+</div><!-- end of main-bg -->
+
+
