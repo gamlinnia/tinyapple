@@ -36,11 +36,32 @@
             <block type="works/content" name="works_content" template="li_works/completed_list.phtml">
                 <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs" />
                 <block type="works/content" name="aside" as="aside" template="li_works/aside.phtml" />
+                <block type="works/pager" name="pager" template="li_works/pager.phtml" />
             </block>
             <block type="homepage/html_footer" name="custom_footer" />
         </reference>
     </works_completed_index>
     <works_completed_works>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type><script>tinyapple/flexslider/jquery.flexslider.js</script>
+            </action>
+            <action method="addCss">
+                <stylesheet>tinyapple/flexslider/flexslider.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>tinyapple/flexslider/flexslider_pic.css</stylesheet>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type><script>tinyapple/popup/responsiveslides.min.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type><script>tinyapple/popup/venobox.min.js</script>
+            </action>
+            <action method="addCss">
+                <stylesheet>tinyapple/popup/venobox.css</stylesheet>
+            </action>
+        </reference>
 
         <update handle="tinyapple_insidepage" />
 

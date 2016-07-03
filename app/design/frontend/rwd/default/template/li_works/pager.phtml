@@ -1,0 +1,18 @@
+<a href="#" class="prev"><span class="fa fa-caret-left"></span></a>
+<span href="#" class="current">1</span>
+<a href="#"><span>2</span></a>
+<a href="#"><span>3</span></a>
+<a href="#" class="next"><span class="fa fa-caret-right"></span></a>
+
+
+
+debug:
+limit: <?php echo $this->getLimit() ?>
+FrameLength: <?php echo $this->getFrameLength() ?>
+Jump: <?php echo $this->getJump() ?>
+
+<?php echo $this->getUrl('*/*/*', array(
+        'category_id' => 4,
+        '_query' => array('test' => '123')
+)); ?>
+<?php Zend_Debug::dump($this->getCollection()->getFirstItem()->getData());

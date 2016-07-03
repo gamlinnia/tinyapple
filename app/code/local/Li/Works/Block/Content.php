@@ -3,6 +3,8 @@
 class Li_Works_Block_Content extends Mage_Core_Block_Template
 {
 
+    protected $_collection;
+
     public function getProduct () {
         return Mage::getModel('catalog/product')->load($this->getProductId());
     }
@@ -17,10 +19,12 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
     }
 
     public function getCompletedProducts ($typeName) {
-        return $productCollection = Mage::getModel('catalog/category')->load($this->getCategoryId())
+        $productCollection = Mage::getModel('catalog/category')->load($this->getCategoryId())
             ->getProductCollection()
             ->addFieldToFilter('type', $this->getProductTypeId($typeName))
             ->setOrder('entity_id', 'DESC');
+        $this->setCollection($productCollection);
+        return $productCollection;
     }
 
     public function getProductTypeId ($typeName) {
@@ -117,5 +121,42 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
 
         return $cache_url . $imgFileName;
     }
+
+    public function getCollection()
+    {
+        return $this->_collection;
+    }
+
+    public function setCollection($collection)
+    {
+        $this->_collection = $collection;
+        return $this;
+    }
+
+    public function getPagerHtml()
+    {
+        $pagerBlock = $this->getChild('pager');
+
+        if ($pagerBlock instanceof Varien_Object) {
+
+//            $pagerBlock->setAvailableLimit($this->getAvailableLimit());
+
+            $pagerBlock
+//                ->setUseContainer(false)
+//                ->setShowPerPage(false)
+//                ->setShowAmounts(false)
+//                ->setLimitVarName($this->getLimitVarName())
+//                ->setPageVarName($this->getPageVarName())
+                ->setLimit(12)
+                ->setFrameLength(Mage::getStoreConfig('design/pagination/pagination_frame'))
+                ->setJump(Mage::getStoreConfig('design/pagination/pagination_frame_skip'))
+                ->setCollection($this->getCollection());
+
+            return $pagerBlock->_toHtml();
+        }
+
+        return '';
+    }
+
 
 }

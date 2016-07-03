@@ -1,10 +1,12 @@
-<?php $mediaGallery = $this->getProduct()->getMediaGalleryImages() ?>
+<?php $_product = $this->getProduct() ?>
+<?php $mediaGallery = $_product->getMediaGalleryImages() ?>
 
 
 
 <div class="main02-bg">
     <div id="page-banner" class="for-v-middle">
         <h1 class="page-title"><?php echo $this->getWorkPageTitle() ?></h1>
+        <h2><?php echo $_product->getName() ?></h2>
     </div>
     <div id="main01">
         <div id="page-wrap">
@@ -14,10 +16,31 @@
             <div id="page-content">
                 <?php echo $this->getChildHtml('aside') ?>
 
+                <div id="products_show_pic" class="slider">
+                    <div id="slider" class="flexslider flexslider_pic">
+                        <ul class="slides">
+                            <?php foreach ($mediaGallery as $_media): ?>
+                                <li>
+                                    <a href="<?php echo $_media->getUrl() ?>"  data-gall="gall1"  class="md-trigger venobox vbox-item" data-modal="materialsTitle1">
+                                        <img src="<?php echo $_media->getUrl() ?>" />
+                                    </a>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div><!-- end of slider -->
+                    <div id="carousel" class="flexslider flexslider_pic">
+                        <ul class="slides picS">
+                            <?php foreach ($mediaGallery as $_media): ?>
+                                <li><img src="<?php echo $_media->getUrl() ?>" /></li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div><!-- end of carousel -->
+                </div><!-- end of products_show_pic -->
+
                 <div id="page-main">
                     <?php foreach ($mediaGallery as $_media): ?>
-                            <img src="<?php echo $this->getResizedImage('product', $_media->getFile(), 416) ?>">
-                            <div><?php echo $_media->getLabel() ?></div>
+                        <img src="<?php echo $this->getResizedImage('product', $_media->getFile(), 416) ?>">
+                        <div><?php echo $_media->getLabel() ?></div>
                     <?php endforeach ?>
                 </div>
 

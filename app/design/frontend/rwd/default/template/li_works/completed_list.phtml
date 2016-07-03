@@ -1,5 +1,5 @@
 <?php $productCollection = $this->getCompletedProducts('完工作品') ?>
-<?php $categoryCollection = $this->getCategoryCollection() ?>
+<?php $this->setCollection($productCollection) ?>
 
 <div class="main02-bg">
     <div id="page-banner" class="for-v-middle">
@@ -33,8 +33,12 @@
                             </a>
                         </div><!-- end of completed-item -->
                     <?php endforeach ?>
-                </div>
 
+                    <div id="pager">
+                        <?php echo $this->getPagerHtml() ?>
+                    </div>
+                    
+                </div><!-- end of page-main -->
             </div><!-- end of page-content -->
         </div><!--end of page-wrap -->
     </div><!-- end of main01 -->
