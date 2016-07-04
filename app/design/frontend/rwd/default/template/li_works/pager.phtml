@@ -1,41 +1,19 @@
-<div>
-    <a href="<?php echo $this->getPreviousPageUrl() ?>" class="prev"><span class="fa fa-caret-left"></span></a>
-    <?php foreach ($this->getPages() as $page): ?>
-        <?php if ((int)$page == $this->getCurrentPage()): ?>
-            <a href="#"  class="current"><span><?php echo $page ?></span></a>
-        <?php else: ?>
-            <a href="<?php echo $this->getPageUrl($page) ?>"><span><?php echo $page ?></span></a>
-        <?php endif ?>
-    <?php endforeach ?>
-    <a href="<?php echo $this->getNextPageUrl() ?>" class="next"><span class="fa fa-caret-right"></span></a>
-</div>
-<!--
-<div>
-    總筆數： <?php /*echo $this->getTotalNum() */?>
-</div>
-<div>
-    getPages: <?php /*Zend_Debug::dump($this->getPages()) */?>
-</div>
-<div>
-    getFirstNum: <?php /*$this->getFirstNum() */?>
-</div>
-<div>
-    limit: <?php /*echo $this->getLimit() */?>
-</div>
-<div>
-    FrameLength: <?php /*echo $this->getFrameLength() */?>
-</div>
-<div>
-    Jump: <?php /*echo $this->getJump() */?>
-</div>
-<div>
-    CurrentPage: <?php /*echo $this->getCurrentPage() */?>
-</div>
-<div>
-    每頁顯示幾筆： <?php /*echo $this->getCollection()->getPageSize() */?>
-</div>
+<a href="<?php echo $this->getPreviousPageUrl() ?>" class="prev"><span class="fa fa-caret-left"></span></a>
+<?php foreach ($this->getPages() as $page): ?>
+    <?php if ((int)$page == $this->getCurrentPage()): ?>
+        <a href="#"  class="current"><span><?php echo $page ?></span></a>
+    <?php else: ?>
+        <a href="<?php echo $this->getPageUrl($page) ?>"><span><?php echo $page ?></span></a>
+    <?php endif ?>
+<?php endforeach ?>
+<a href="<?php echo $this->getNextPageUrl() ?>" class="next"><span class="fa fa-caret-right"></span></a>
 
---><?php /*echo $this->getUrl('*/*/*', array(
-    'category_id' => $this->getRequest()->getParam('category_id'),
-    '_query' => array('page' => 1)
-)); */?>
+
+<?php /*echo $this->getTotalNum() */?>
+<?php /*Zend_Debug::dump($this->getPages()) */?>
+<?php /*$this->getFirstNum() */?>
+<?php /*echo $this->getLimit() */?>
+<?php /*echo $this->getFrameLength() */?>
+<?php /*echo $this->getJump() */?>
+<?php /*echo $this->getCurrentPage() */?>
+<?php /*echo $this->getCollection()->getPageSize() */?>

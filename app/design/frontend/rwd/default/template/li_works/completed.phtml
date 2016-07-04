@@ -7,7 +7,7 @@
     <div id="page-banner" class="for-v-middle">
         <div class="page-title-wrap">
             <h1 class="page-title">
-            <?php echo $this->getWorkPageTitle() ?>
+                <?php echo $this->getWorkPageTitle() ?>
             </h1>
             <h2><?php echo $_product->getName() ?></h2>
         </div>
@@ -25,12 +25,14 @@
                         <div class="p-title for-v-middle"><?php echo $_product->getName() ?></div>
                         <div id="slider" class="flexslider flexslider_pic">
                             <ul class="slides">
+                                <?php $count = 0; ?>
                                 <?php foreach ($mediaGallery as $_media): ?>
-                                    <?php if (strpos($_media->getLabel(), '完工作品') !== false): ?>
+                                    <?php $count++ ?>
+                                    <?php if (strpos($_media->getLabel(), '完工作品') !== false || $count == count($mediaGallery)): ?>
+                                        <?php $count-- ?>
                                         <li>
                                             <a href="<?php echo $_media->getUrl() ?>"  data-gall="gall1"  class="md-trigger venobox vbox-item" data-modal="materialsTitle1">
-                                                <img src="<?php
-                                                echo $this->helper('timage')
+                                                <img src="<?php echo $this->helper('timage')
                                                     ->init($_media->getUrl())
                                                     ->setWidth(674)
                                                     ->setHeight(500)
@@ -44,8 +46,11 @@
                         </div><!-- end of slider -->
                         <div id="carousel" class="flexslider flexslider_pic clearfix">
                             <ul class="slides picS">
+                                <?php $count = 0; ?>
                                 <?php foreach ($mediaGallery as $_media): ?>
-                                    <?php if (strpos($_media->getLabel(), '完工作品') !== false): ?>
+                                    <?php $count++ ?>
+                                    <?php if (strpos($_media->getLabel(), '完工作品') !== false || $count == count($mediaGallery)): ?>
+                                        <?php $count-- ?>
                                         <li><img src="<?php
                                             echo $this->helper('timage')
                                                 ->init($_media->getUrl())
@@ -68,13 +73,13 @@
                     <div id="products_show_introduction">
                         <div class="title">作品介紹</div>
                         <?php foreach ($mediaGallery as $_media): ?>
-                        <figure>
-                            <p><?php echo $_media->getLabel() ?></p>
-                            <img src="<?php echo $_media->getUrl() ?>">
-                        </figure>
+                            <figure>
+                                <p><?php echo $_media->getLabel() ?></p>
+                                <img src="<?php echo $_media->getUrl() ?>">
+                            </figure>
                         <?php endforeach ?>
                     </div><!-- end of products_show_introduction -->
-                    
+
                 </div>
 
             </div><!-- end of page-content -->

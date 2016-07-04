@@ -15,11 +15,17 @@
                 <?php echo $this->getChildHtml('aside') ?>
 
                 <div id="page-main">
+                    <div class="title">浴室整修 - 作業流程</div>
+
                     <?php foreach ($mediaGallery as $_media): ?>
-                        <img src="<?php echo $this->getResizedImage('product', $_media->getFile(), 416) ?>">
-                        <?php echo $_media->getLabel() ?>
-                        <?php echo $_media->getPosition() ?>
-                    <?php endforeach ?>                </div>
+                        <figure>
+                            <p><span><?php echo $_media->getPosition() ?> <spna> - </span> </span><?php echo $_media->getLabel() ?>
+                            </p>
+                            <img src="<?php echo $this->helper('timage')->init($_media->getUrl())->keepFrame(false)->resize(580, null) ?>">
+                        </figure>
+                    <?php endforeach ?>
+
+                </div> <!-- end of page-main -->
 
             </div><!-- end of page-content -->
         </div><!--end of page-wrap -->
