@@ -4,6 +4,8 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
 {
 
     protected $_collection;
+    protected $pageSize = 9;
+    protected $_pageVarName = 'page';
 
     public function getProduct () {
         return Mage::getModel('catalog/product')->load($this->getProductId());
@@ -22,7 +24,9 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
         $productCollection = Mage::getModel('catalog/category')->load($this->getCategoryId())
             ->getProductCollection()
             ->addFieldToFilter('type', $this->getProductTypeId($typeName))
-            ->setOrder('entity_id', 'DESC');
+            ->setOrder('entity_id', 'DESC')
+            ->setPageSize($this->getPageSize())
+            ->setCurPage($this->getPage() ? $this->getPage() : 1);
         $this->setCollection($productCollection);
         return $productCollection;
     }
@@ -133,6 +137,26 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
         return $this;
     }
 
+    public function getPageSize()
+    {
+        return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize)
+    {
+        $this->pageSize = $pageSize;
+    }
+
+    public function getPageVarName()
+    {
+        return $this->_pageVarName;
+    }
+
+    public function setPageVarName($pageVarName)
+    {
+        $this->_pageVarName = $pageVarName;
+    }
+
     public function getPagerHtml()
     {
         $pagerBlock = $this->getChild('pager');
@@ -146,7 +170,7 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
 //                ->setShowPerPage(false)
 //                ->setShowAmounts(false)
 //                ->setLimitVarName($this->getLimitVarName())
-//                ->setPageVarName($this->getPageVarName())
+                ->setPageVarName($this->getPageVarName())
                 ->setLimit(12)
                 ->setFrameLength(Mage::getStoreConfig('design/pagination/pagination_frame'))
                 ->setJump(Mage::getStoreConfig('design/pagination/pagination_frame_skip'))

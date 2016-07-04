@@ -5,8 +5,12 @@
 
 <div class="main02-bg">
     <div id="page-banner" class="for-v-middle">
-        <h1 class="page-title"><?php echo $this->getWorkPageTitle() ?></h1>
-        <h2><?php echo $_product->getName() ?></h2>
+        <div class="page-title-wrap">
+            <h1 class="page-title">
+            <?php echo $this->getWorkPageTitle() ?>
+            </h1>
+            <h2><?php echo $_product->getName() ?></h2>
+        </div>
     </div>
     <div id="main01">
         <div id="page-wrap">
@@ -15,33 +19,62 @@
 
             <div id="page-content">
                 <?php echo $this->getChildHtml('aside') ?>
-
-                <div id="products_show_pic" class="slider">
-                    <div id="slider" class="flexslider flexslider_pic">
-                        <ul class="slides">
-                            <?php foreach ($mediaGallery as $_media): ?>
-                                <li>
-                                    <a href="<?php echo $_media->getUrl() ?>"  data-gall="gall1"  class="md-trigger venobox vbox-item" data-modal="materialsTitle1">
-                                        <img src="<?php echo $_media->getUrl() ?>" />
-                                    </a>
-                                </li>
-                            <?php endforeach ?>
-                        </ul>
-                    </div><!-- end of slider -->
-                    <div id="carousel" class="flexslider flexslider_pic">
-                        <ul class="slides picS">
-                            <?php foreach ($mediaGallery as $_media): ?>
-                                <li><img src="<?php echo $_media->getUrl() ?>" /></li>
-                            <?php endforeach ?>
-                        </ul>
-                    </div><!-- end of carousel -->
-                </div><!-- end of products_show_pic -->
-
                 <div id="page-main">
-                    <?php foreach ($mediaGallery as $_media): ?>
-                        <img src="<?php echo $this->getResizedImage('product', $_media->getFile(), 416) ?>">
-                        <div><?php echo $_media->getLabel() ?></div>
-                    <?php endforeach ?>
+
+                    <div id="products_show_pic" class="slider">
+                        <div class="p-title for-v-middle"><?php echo $_product->getName() ?></div>
+                        <div id="slider" class="flexslider flexslider_pic">
+                            <ul class="slides">
+                                <?php foreach ($mediaGallery as $_media): ?>
+                                    <?php if (strpos($_media->getLabel(), '完工作品') !== false): ?>
+                                        <li>
+                                            <a href="<?php echo $_media->getUrl() ?>"  data-gall="gall1"  class="md-trigger venobox vbox-item" data-modal="materialsTitle1">
+                                                <img src="<?php
+                                                echo $this->helper('timage')
+                                                    ->init($_media->getUrl())
+                                                    ->setWidth(674)
+                                                    ->setHeight(500)
+                                                    ->crop()
+                                                    ->resize() ?>" />
+                                            </a>
+                                        </li>
+                                    <?php endif ?>
+                                <?php endforeach ?>
+                            </ul>
+                        </div><!-- end of slider -->
+                        <div id="carousel" class="flexslider flexslider_pic clearfix">
+                            <ul class="slides picS">
+                                <?php foreach ($mediaGallery as $_media): ?>
+                                    <?php if (strpos($_media->getLabel(), '完工作品') !== false): ?>
+                                        <li><img src="<?php
+                                            echo $this->helper('timage')
+                                                ->init($_media->getUrl())
+                                                ->setWidth(674)
+                                                ->setHeight(500)
+                                                ->crop()
+                                                ->resize() ?>" /></li>
+                                    <?php endif ?>
+                                <?php endforeach ?>
+                            </ul>
+                        </div><!-- end of carousel -->
+
+                        <div id="p-controls-btn">
+                            <a href="#" class="p-c-btn btn-prev">上件作品</a>
+                            <a href="#" class="p-c-btn btn-next">下件作品</a>
+                            <a href="#" class="p-c-btn btn-back">回列表</a>
+                        </div><!-- end of p-controls-btn -->
+                    </div><!-- end of products_show_pic -->
+
+                    <div id="products_show_introduction">
+                        <div class="title">作品介紹</div>
+                        <?php foreach ($mediaGallery as $_media): ?>
+                        <figure>
+                            <p><?php echo $_media->getLabel() ?></p>
+                            <img src="<?php echo $_media->getUrl() ?>">
+                        </figure>
+                        <?php endforeach ?>
+                    </div><!-- end of products_show_introduction -->
+                    
                 </div>
 
             </div><!-- end of page-content -->

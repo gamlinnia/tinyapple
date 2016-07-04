@@ -1,18 +1,41 @@
-<a href="#" class="prev"><span class="fa fa-caret-left"></span></a>
-<span href="#" class="current">1</span>
-<a href="#"><span>2</span></a>
-<a href="#"><span>3</span></a>
-<a href="#" class="next"><span class="fa fa-caret-right"></span></a>
+<div>
+    <a href="<?php echo $this->getPreviousPageUrl() ?>" class="prev"><span class="fa fa-caret-left"></span></a>
+    <?php foreach ($this->getPages() as $page): ?>
+        <?php if ((int)$page == $this->getCurrentPage()): ?>
+            <a href="#"  class="current"><span><?php echo $page ?></span></a>
+        <?php else: ?>
+            <a href="<?php echo $this->getPageUrl($page) ?>"><span><?php echo $page ?></span></a>
+        <?php endif ?>
+    <?php endforeach ?>
+    <a href="<?php echo $this->getNextPageUrl() ?>" class="next"><span class="fa fa-caret-right"></span></a>
+</div>
+<!--
+<div>
+    總筆數： <?php /*echo $this->getTotalNum() */?>
+</div>
+<div>
+    getPages: <?php /*Zend_Debug::dump($this->getPages()) */?>
+</div>
+<div>
+    getFirstNum: <?php /*$this->getFirstNum() */?>
+</div>
+<div>
+    limit: <?php /*echo $this->getLimit() */?>
+</div>
+<div>
+    FrameLength: <?php /*echo $this->getFrameLength() */?>
+</div>
+<div>
+    Jump: <?php /*echo $this->getJump() */?>
+</div>
+<div>
+    CurrentPage: <?php /*echo $this->getCurrentPage() */?>
+</div>
+<div>
+    每頁顯示幾筆： <?php /*echo $this->getCollection()->getPageSize() */?>
+</div>
 
-
-
-debug:
-limit: <?php echo $this->getLimit() ?>
-FrameLength: <?php echo $this->getFrameLength() ?>
-Jump: <?php echo $this->getJump() ?>
-
-<?php echo $this->getUrl('*/*/*', array(
-        'category_id' => 4,
-        '_query' => array('test' => '123')
-)); ?>
-<?php Zend_Debug::dump($this->getCollection()->getFirstItem()->getData());
+--><?php /*echo $this->getUrl('*/*/*', array(
+    'category_id' => $this->getRequest()->getParam('category_id'),
+    '_query' => array('page' => 1)
+)); */?>
