@@ -696,7 +696,7 @@
 "The attribute set has been saved.","The attribute set has been saved."
 "The base directory to upload file is not specified.","The base directory to upload file is not specified."
 "The category has been deleted.","The category has been deleted."
-"The category has been saved.","The category has been saved."
+"The category has been saved.","目錄資訊已經儲存完畢"
 "The comparison list was cleared.","The comparison list was cleared."
 "The file '%s' for '%s' has an invalid extension","The file '%s' for '%s' has an invalid extension"
 "The file '%s' you uploaded is larger than %s Megabytes allowed by server","The file '%s' you uploaded is larger than %s Megabytes allowed by server"

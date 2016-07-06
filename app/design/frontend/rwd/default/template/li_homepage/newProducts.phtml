@@ -11,11 +11,12 @@
             <div class="item-wrap">
                 <img src="<?php echo $this->helper('timage')
                     ->init($this->helper('catalog/image')->init($_product, 'image'))
-                    ->setWidth(300)
-                    ->setHeight(225)
+                    ->setWidth(422)
+                    ->setHeight(422)
+                    ->keepFrame(false)
                     ->crop()
                     ->resize() ?>" alt="">
-                <a href="<?php echo Mage::getBaseUrl() ?>works" class="newer-item-text">
+                <a href="<?php echo $this->getUrl('works/completed/works', array('id' => $product->getId())) ?>" class="newer-item-text">
                     <span><?php echo $_product->getName() ?><span class="fa fa-link"></span></span>
                 </a>
             </div>

@@ -34,7 +34,7 @@ class Li_Works_CompletedController extends Mage_Core_Controller_Front_Action
 
         $this->getLayout()->getBlock('head')->setTitle('小蘋果工程-作品展示');
 
-        $block=$this->getLayout()->createBlock('works/content');
+        $block = $this->getLayout()->createBlock('works/content');
 
         if ($breadcrumbsBlock = $this->getLayout()->getBlock('breadcrumbs')) {
             $breadcrumbsBlock

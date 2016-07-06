@@ -1,6 +1,6 @@
 <?php $_product = $this->getProduct() ?>
 <?php $mediaGallery = $_product->getMediaGalleryImages() ?>
-
+<?php $block = $this->getLayout()->createBlock('works/content'); ?>
 
 
 <div class="main02-bg">
@@ -64,9 +64,13 @@
                         </div><!-- end of carousel -->
 
                         <div id="p-controls-btn">
-                            <a href="#" class="p-c-btn btn-prev">上件作品</a>
-                            <a href="#" class="p-c-btn btn-next">下件作品</a>
-                            <a href="#" class="p-c-btn btn-back">回列表</a>
+                            <?php if (!$this->isFirstProduct('完工作品', $_product->getId())): ?>
+                                <a href="<?php echo $this->getPrevCompletedProductId('完工作品', $_product->getId()) ?>" class="p-c-btn btn-prev">上件作品</a>
+                            <?php endif ?>
+                            <?php if (!$this->isLastProduct('完工作品', $_product->getId())): ?>
+                                <a href="<?php echo $this->getNextCompletedProductId('完工作品', $_product->getId()) ?>" class="p-c-btn btn-next">下件作品</a>
+                            <?php endif ?>
+                            <a href="<?php echo Mage::helper('homepage/data')->getControllerUrl() . 'index/category_id/' . $block->getCategoryId() ?>" class="p-c-btn btn-back">回列表</a>
                         </div><!-- end of p-controls-btn -->
                     </div><!-- end of products_show_pic -->
 
@@ -75,7 +79,7 @@
                         <?php foreach ($mediaGallery as $_media): ?>
                             <figure>
                                 <p><?php echo $_media->getLabel() ?></p>
-                                <img src="<?php echo $_media->getUrl() ?>">
+                                <img src="<?php echo $this->helper('timage')->init($_media->getUrl())->keepFrame(false)->resize(580, null) ?>" />
                             </figure>
                         <?php endforeach ?>
                     </div><!-- end of products_show_introduction -->
@@ -86,4 +90,5 @@
         </div><!--end of page-wrap -->
     </div><!-- end of main01 -->
 </div><!-- end of main-bg -->
+
 

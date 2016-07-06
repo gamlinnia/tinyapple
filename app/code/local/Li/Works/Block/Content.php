@@ -31,6 +31,48 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
         return $productCollection;
     }
 
+    public function getCompletedProductIdArray ($typeName) {
+        $productIdArray = array();
+        $productCollection = Mage::getModel('catalog/category')->load($this->getCategoryId())
+            ->getProductCollection()
+            ->addFieldToFilter('type', $this->getProductTypeId($typeName))
+            ->setOrder('entity_id', 'DESC');
+        foreach ($productCollection as $product) {
+            $productIdArray[] = $product->getId();
+        }
+        return $productIdArray;
+    }
+
+    public function getPrevCompletedProductId ($typeName, $productId) {
+        $productIdArray = $this->getCompletedProductIdArray($typeName);
+        $index = array_search((string)$productId, $productIdArray);
+        return $productIdArray[$index - 1];
+    }
+
+    public function getNextCompletedProductId ($typeName, $productId) {
+        $productIdArray = $this->getCompletedProductIdArray($typeName);
+        $index = array_search((string)$productId, $productIdArray);
+        return $productIdArray[$index + 1];
+    }
+
+    public function isFirstProduct ($typeName, $productId) {
+        $productIdArray = $this->getCompletedProductIdArray($typeName);
+        $index = array_search((string)$productId, $productIdArray);
+        if ($index > 0) {
+            return false;
+        }
+        return true;
+    }
+
+    public function isLastProduct ($typeName, $productId) {
+        $productIdArray = $this->getCompletedProductIdArray($typeName);
+        $index = array_search((string)$productId, $productIdArray);
+        if ($index < count($productIdArray) - 1) {
+            return false;
+        }
+        return true;
+    }
+
     public function getProductTypeId ($typeName) {
         return Mage::helper('homepage/data')->getOptionValueIdFromAttributeOptionLabel('attributeName', 'type', $typeName);
     }
@@ -173,7 +215,7 @@ class Li_Works_Block_Content extends Mage_Core_Block_Template
                 ->setPageVarName($this->getPageVarName())
                 ->setLimit(12)
                 ->setFrameLength(Mage::getStoreConfig('design/pagination/pagination_frame'))
-                ->setJump(Mage::getStoreConfig('design/pagination/pagination_frame_skip'))
+                ->setJump(3)
                 ->setCollection($this->getCollection());
 
             return $pagerBlock->_toHtml();

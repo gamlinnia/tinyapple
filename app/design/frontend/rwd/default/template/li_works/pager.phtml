@@ -1,19 +1,27 @@
-<a href="<?php echo $this->getPreviousPageUrl() ?>" class="prev"><span class="fa fa-caret-left"></span></a>
+<?php if (!$this->isFirstPage()): ?>
+    <a href="<?php echo $this->getPreviousJumpUrl() ?>" class="prev"><span class="fa fa-caret-left"></span></a>
+<?php endif ?>
+
 <?php foreach ($this->getPages() as $page): ?>
     <?php if ((int)$page == $this->getCurrentPage()): ?>
-        <a href="#"  class="current"><span><?php echo $page ?></span></a>
+        <a class="current"><span><?php echo $page ?></span></a>
     <?php else: ?>
         <a href="<?php echo $this->getPageUrl($page) ?>"><span><?php echo $page ?></span></a>
     <?php endif ?>
 <?php endforeach ?>
-<a href="<?php echo $this->getNextPageUrl() ?>" class="next"><span class="fa fa-caret-right"></span></a>
+
+<?php if (!$this->isLastPage()): ?>
+    <a href="<?php echo $this->getNextJumpUrl() ?>" class="next"><span class="fa fa-caret-right"></span></a>
+<?php endif ?>
 
 
 <?php /*echo $this->getTotalNum() */?>
 <?php /*Zend_Debug::dump($this->getPages()) */?>
-<?php /*$this->getFirstNum() */?>
+<?php // echo 'first num: ' . $this->getFirstNum() ?>
 <?php /*echo $this->getLimit() */?>
-<?php /*echo $this->getFrameLength() */?>
-<?php /*echo $this->getJump() */?>
+<?php //echo 'FrameLength' . $this->getFrameLength() ?>
+<?php //echo 'getFrameStart' . $this->getFrameStart() ?>
+<?php //echo 'jump' . $this->getJump() ?>
+<?php //echo 'getNextJumpPage' . $this->getNextJumpPage() ?>
 <?php /*echo $this->getCurrentPage() */?>
 <?php /*echo $this->getCollection()->getPageSize() */?>

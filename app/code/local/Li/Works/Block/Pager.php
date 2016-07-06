@@ -7,7 +7,7 @@ class Li_Works_Block_Pager extends Mage_Core_Block_Template
     protected $_limitVarName   = 'limit';
     protected $_availableLimit = array(10=>10,20=>20,50=>50);
     protected $_dispersion     = 3;
-    protected $_displayPages   = 5;
+    protected $_displayPages   = 3;
     protected $_showPerPage    = true;
     protected $_limit          = null;
     protected $_outputRequired = true;
@@ -16,7 +16,7 @@ class Li_Works_Block_Pager extends Mage_Core_Block_Template
      * Pages quantity per frame
      * @var int
      */
-    protected $_frameLength = 5;
+    protected $_frameLength = 3;
 
     /**
      * Next/previous page position relatively to the current frame
@@ -317,12 +317,7 @@ class Li_Works_Block_Pager extends Mage_Core_Block_Template
         if (!$this->getJump()) {
             return null;
         }
-        $frameStart = $this->getFrameStart();
-        if ($frameStart - 1 > 1) {
-            return max(2, $frameStart - $this->getJump());
-        }
-
-        return null;
+        return ($this->getCurrentPage() - $this->getJump() < 2) ? 1 : $this->getCurrentPage() - $this->getJump();
     }
 
     /**
@@ -345,12 +340,7 @@ class Li_Works_Block_Pager extends Mage_Core_Block_Template
         if (!$this->getJump()) {
             return null;
         }
-        $frameEnd = $this->getFrameEnd();
-        if ($this->getLastPageNum() - $frameEnd > 1) {
-            return min($this->getLastPageNum() - 1, $frameEnd + $this->getJump());
-        }
-
-        return null;
+        return ($this->getCurrentPage() + $this->getJump() < $this->getLastPageNum()) ? $this->getCurrentPage() + $this->getJump() : $this->getLastPageNum();
     }
 
     /**

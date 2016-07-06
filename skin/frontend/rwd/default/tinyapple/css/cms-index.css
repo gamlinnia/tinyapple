@@ -424,7 +424,7 @@ aside .submenu li a:before {
 	margin: .5rem 0;
 	font-family: Helvetica Neue, 'Helvetica Neue', Helvetica, 'Helvetica', Arial, sans-serif;
 }
-#pager a:nth-child(n+3):before {
+#pager a:before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -433,7 +433,7 @@ aside .submenu li a:before {
     margin-left: -4px;
     background: #333;
 }
-#pager a:last-child:before {
+#pager a:first-child:before {
 	content: none;
 }
 #pager span {
@@ -442,6 +442,9 @@ aside .submenu li a:before {
     width: 2.5rem;
     font-size: 1.2rem;
     text-align: center;
+}
+#pager .current {
+	cursor: default;
 }
 #pager .current span:after {
 	content: "";
@@ -469,8 +472,8 @@ aside .submenu li a:before {
     background: rgba(255, 255, 255, .5);
     width: 100%;
     text-align: center;
-    font-size: 1.3rem;
-    padding: .3em 0;
+    font-size: 1.2rem;
+    padding: .5em 0;
 }
 
 #products_show_pic .flex-direction-nav a:before {
@@ -544,7 +547,7 @@ aside .submenu li a:before {
 	background: #002658;
 }
 #products_show_introduction figure {
-	margin: 1em;
+	margin: .5em 1em 2em 1em;
 }
 /* works end */
 

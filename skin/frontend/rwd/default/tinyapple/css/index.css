@@ -13,6 +13,7 @@
 /* banner start */
 #idx-banner {
 	position: relative;
+	width: 100%;
 }
 .idx-banner-overlay-l, .idx-banner-overlay-r {
 	display: inline-block;
@@ -63,9 +64,8 @@
 .bn-text {
 	position: absolute;
 	right: 5%;
-	top: 10%;
-	width: 375px;
-	height: 375px;
+	bottom: 50px;
+	padding: 1.5em;
 	text-align: center;
 	background: rgba(255, 255, 255, .4);
 }
@@ -107,6 +107,8 @@
     filter: FlipH;
     -ms-filter: "FlipH";
 }
+.slick-slide img{ border:0; display:block; width:100%;}
+.slick-slider { margin:1px auto 0px auto;}
 /* banner end */
 
 #content {
@@ -336,6 +338,7 @@
 }
 #idx-works-slide .newer-item:hover .newer-item-text {
 	height: 100%;
+	background: rgba(255, 255, 255, .6);
 	display: -webkit-flex;
 	display:         flex;
 	-webkit-align-items: center;
@@ -379,9 +382,6 @@
 @media only screen and (max-width: 980px) {
 	.bn-text {
 		right: 12%;
-		top: 15%;
-		width: 280px;
-		height: 280px;
 	}
 	.slogan {
 		font-size: 1.3rem;
@@ -410,8 +410,8 @@
 @media only screen and (max-width: 760px) {
 	
 	.bn-text {
-		right: 12%;
-		height: 200px;
+		bottom: .5em;
+		padding: 1em;
 	}
 
 	.idx-about, .idx-service {
@@ -428,12 +428,12 @@
 @media only screen and (max-width: 480px) {
 	.bn-text {
 		right: 1.5%;
-		top: 1.5%;
-		height: 97%;
-		width: 97%;
+		bottom: 0;
+		padding: .3em;
+		background: none;
 	}
-	.slogan {
-		font-size: 1.1rem;
+	.bn-text .slogan {
+		display: none;
 	}
 
 	.idx-service td img {

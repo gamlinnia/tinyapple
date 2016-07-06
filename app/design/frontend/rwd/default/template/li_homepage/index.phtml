@@ -3,22 +3,22 @@
     <div id="idx-banner" class="clearfix">
         <div class="idx-banner-overlay-l">x</div>
         <div class="idx-banner-overlay-r">x</div>
-        <div id="idx-bn-slide" class="slider">
-            <div>
-                <img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-banner/idx-banner01.jpg') ?>" alt="">
-                <div class="bn-text for-v-middle">
-                    <div>
-                        <div class="slogan">台中 / 彰化 / 南投<br>公寓、透天厝、浴室裝修</div>
-                        <a href="<?php echo Mage::getBaseUrl() ?>works" class="more-btn">浴室裝修</a>
-                    </div>
-                </div>
-            </div>
+        <div id="idx-bn-slide" class="slider clearfix">
             <div>
                 <img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-banner/idx-banner02.jpg') ?>" alt="">
                 <div class="bn-text for-v-middle">
                     <div>
                         <div class="slogan">台中 / 彰化 / 南投<br>公寓、透天厝、浴室裝修</div>
-                        <a href="<?php echo Mage::getBaseUrl() ?>works" class="more-btn">透天厝整修</a>
+                        <a href="<?php echo $this->getUrl('works/completed/index', array('category_id' => 5)) ?>" class="more-btn">透天厝整修</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="<?php echo $this->getSkinUrl('tinyapple/images/idx-banner/idx-banner01.jpg') ?>" alt="">
+                <div class="bn-text for-v-middle">
+                    <div>
+                        <div class="slogan">台中 / 彰化 / 南投<br>公寓、透天厝、浴室裝修</div>
+                        <a href="<?php echo $this->getUrl('works/completed/index', array('category_id' => 4)) ?>" class="more-btn">浴室裝修</a>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                 <div class="bn-text for-v-middle">
                     <div>
                         <div class="slogan">台中 / 彰化 / 南投<br>公寓、透天厝、浴室裝修</div>
-                        <a href="<?php echo Mage::getBaseUrl() ?>works" class="more-btn">系統櫃設計</a>
+                        <a href="<?php echo $this->getUrl('works/completed/index', array('category_id' => 6)) ?>" class="more-btn">公寓整修</a>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                     arrows: true,
                     adaptiveHeight: true,
                     autoplay: true,
-                    autoplaySpeed: 5000,
+                    autoplaySpeed: 6000,
                     useTransform: false,
                     dots: false,
                     infinite: true,
