@@ -295,7 +295,7 @@ aside .submenu li a:before {
 	text-align: center;
 	margin-top: .5em;
 }
-.work-item .work-item-right .btns .more-btn:first-child {
+.work-item .work-item-right .btns .more-btn.workflow-btn{
 	background: #e9edf1;
 	color: #002658;
 }

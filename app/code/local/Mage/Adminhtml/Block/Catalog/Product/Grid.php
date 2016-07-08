@@ -190,14 +190,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Grid extends Mage_Adminhtml_Block_Wid
                         'options' => $sets,
                 ));
         */
-        /*
                 $this->addColumn('sku',
                     array(
                         'header'=> Mage::helper('catalog')->__('SKU'),
                         'width' => '80px',
                         'index' => 'sku',
                 ));
-        */
         /*
                 $store = $this->_getStore();
                 $this->addColumn('price',
@@ -208,7 +206,8 @@ class Mage_Adminhtml_Block_Catalog_Product_Grid extends Mage_Adminhtml_Block_Wid
                         'index' => 'price',
                 ));
         */
-        if (Mage::helper('catalog')->isModuleEnabled('Mage_CatalogInventory')) {
+
+/*        if (Mage::helper('catalog')->isModuleEnabled('Mage_CatalogInventory')) {
             $this->addColumn('qty',
                 array(
                     'header'=> Mage::helper('catalog')->__('Qty'),
@@ -216,7 +215,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Grid extends Mage_Adminhtml_Block_Wid
                     'type'  => 'number',
                     'index' => 'qty',
                 ));
-        }
+        }*/
 /*
         $this->addColumn('visibility',
             array(

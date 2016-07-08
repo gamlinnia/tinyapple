@@ -124,7 +124,7 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Product extends Mage_Adminhtml_B
             'width'     => '80',
             'index'     => 'sku'
         ));
-/*        $this->addColumn('price', array(
+        $this->addColumn('price', array(
             'header'    => Mage::helper('catalog')->__('Price'),
             'type'  => 'currency',
             'width'     => '1',
@@ -138,7 +138,7 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Product extends Mage_Adminhtml_B
             'index'     => 'position',
             'editable'  => !$this->getCategory()->getProductsReadonly()
             //'renderer'  => 'adminhtml/widget_grid_column_renderer_input'
-        ));*/
+        ));
 
         return parent::_prepareColumns();
     }

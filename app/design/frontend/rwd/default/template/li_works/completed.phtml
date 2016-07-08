@@ -31,13 +31,11 @@
                                     <?php if (strpos($_media->getLabel(), '完工作品') !== false || $count == count($mediaGallery)): ?>
                                         <?php $count-- ?>
                                         <li>
-                                            <a href="<?php echo $_media->getUrl() ?>"  data-gall="gall1"  class="md-trigger venobox vbox-item" data-modal="materialsTitle1">
-                                                <img src="<?php echo $this->helper('timage')
-                                                    ->init($_media->getUrl())
-                                                    ->setWidth(674)
-                                                    ->setHeight(500)
-                                                    ->crop()
-                                                    ->resize() ?>" />
+                                            <!--<a href="<?php /*echo $_media->getUrl() */?>"  data-gall="gall1"  class="md-trigger venobox vbox-item" data-modal="materialsTitle1">-->
+                                            <img src="<?php echo $this->helper('timage')
+                                                ->init($_media->getUrl())
+                                                ->keepAspectRatio(true)
+                                                ->resize(674, 500) ?>" />
                                             </a>
                                         </li>
                                     <?php endif ?>
@@ -54,10 +52,8 @@
                                         <li><img src="<?php
                                             echo $this->helper('timage')
                                                 ->init($_media->getUrl())
-                                                ->setWidth(674)
-                                                ->setHeight(500)
-                                                ->crop()
-                                                ->resize() ?>" /></li>
+                                                ->keepAspectRatio(true)
+                                                ->resize(674, 500) ?>" /></li>
                                     <?php endif ?>
                                 <?php endforeach ?>
                             </ul>
