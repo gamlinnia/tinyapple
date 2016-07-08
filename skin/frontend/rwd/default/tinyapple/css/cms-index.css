@@ -10,13 +10,16 @@
     top: 0;
     left: 0;
 	z-index: -1;
-	background: url(../images/page-bg/page-bg-01.png) no-repeat top center;
+}
+
+#about-main-bg:before {
+	background: url(../images/page-bg/page-bg-01.jpg) no-repeat top center;
 }
 #service-main-bg:before {
-	background: url(../images/page-bg/page-bg-02.png) no-repeat top center;
+	background: url(../images/page-bg/page-bg-02.jpg) no-repeat top center;
 }
 #contact-main-bg:before {
-	background: url(../images/page-bg/page-bg-03.png) no-repeat top center;
+	background: url(../images/page-bg/page-bg-03.jpg) no-repeat top center;
 }
 
 #page-banner {
