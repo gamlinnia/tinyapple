@@ -31,7 +31,7 @@
                                     <?php if (strpos($_media->getLabel(), '完工作品') !== false || $count == count($mediaGallery)): ?>
                                         <?php $count-- ?>
                                         <li>
-                                            <!--<a href="<?php /*echo $_media->getUrl() */?>"  data-gall="gall1"  class="md-trigger venobox vbox-item" data-modal="materialsTitle1">-->
+                                            <a href="<?php echo $_media->getUrl() ?>"  data-gall="gall1"  class="md-trigger venobox vbox-item" data-modal="materialsTitle1">
                                             <img src="<?php echo $this->helper('timage')
                                                 ->init($_media->getUrl())
                                                 ->keepAspectRatio(true)
@@ -88,3 +88,27 @@
 </div><!-- end of main-bg -->
 
 
+<script type="text/javascript">
+/*
+     jQuery(document).ready(function(){
+     jQuery('#carousel').flexslider({
+     animation: "slide",
+     controlNav: false,
+     animationLoop: false,
+     slideshow: false,
+     itemWidth: 82,
+     itemMargin: 4,
+     asNavFor: '#slider'
+     });
+
+     jQuery('#slider').flexslider({
+     animation: "slide",
+     controlNav: false,
+     animationLoop: false,
+     slideshow: false,
+     sync: "#carousel"
+     });
+     });
+ */
+
+</script>

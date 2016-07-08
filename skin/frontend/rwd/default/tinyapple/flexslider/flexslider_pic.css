@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* CSS Document */
+
+.flex-container a:active,
+.flexslider_pic a:active,
+.flex-container a:focus,
+.flexslider_pic a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+/* Icon Fonts
+*********************************/
+/* Font-face Icons */
+@font-face {
+	font-family: 'flexslider_pic-icon';
+	src:url('fonts/flexslider-icon.eot');
+	src:url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/flexslider-icon.woff') format('woff'),
+		url('fonts/flexslider-icon.ttf') format('truetype'),
+		url('fonts/flexslider-icon.svg#flexslider_pic-icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider_pic {margin:.5rem 0; padding: 0;}
+.flexslider_pic .slides > li {
+	display: none; -webkit-backface-visibility: hidden;
+} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider_pic .slides img {
+    max-width: 100%;
+    display: block;
+    max-height: 500px;
+	margin:0 auto;
+	}
+	
+.flexslider .slides.picS img {
+	width: calc(96% / 4 - 4px);
+	padding: .2rem .5rem;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+	border: 1px solid #eee;
+	opacity:0.6;
+	cursor:pointer;
+}
+.flexslider .slides.picS img:hover {
+	opacity:1;
+}
+.flexslider .slides.picS .flex-active-slide img {
+	opacity:1;
+	border: 1px solid #ccc;
+}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "\0020"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider_pic {  background: #fff; border: 0px solid #fff; position: relative;  zoom: 1;width: calc(100%);}
+.flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease;border-radius:5px;}
+.loading .flex-viewport { max-height: 300px; }
+.flexslider_pic .slides { zoom: 1; }
+.carousel li { margin-right: 5px; }
+/* Direction Nav */
+.flex-direction-nav {*height: 0;}
+.flex-direction-nav a  { text-decoration:none; display: block; width: 27px; height: 32px;margin: -20px 0 0; position: absolute; top: 50%; z-index: 10; overflow: hidden; opacity: 0; cursor: pointer; color: rgba(0,0,0,0.8); text-shadow: 1px 1px 0 rgba(255,255,255,0.3); -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; }
+.flex-direction-nav .flex-prev { left: -50px; }
+.flex-direction-nav .flex-next { right: -50px; text-align: right; }
+.flexslider_pic:hover .flex-prev { opacity: 0.7; left: 10px; }
+.flexslider_pic:hover .flex-next { opacity: 0.7; right: 10px; }
+.flexslider_pic:hover .flex-next:hover, .flexslider_pic:hover .flex-prev:hover { opacity: 1; }
+.flexslider_pic:hover .flex-next:hover, .flexslider_pic:hover .flex-prev:hover,.flex-direction-nav .flex-prev, .flex-direction-nav .flex-next  { line-height: 244%;}
+.flex-direction-nav .flex-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
+.flex-direction-nav a:before  { 
+    font-family: "flexslider_pic-icon";
+    font-size: 33px;
+    display: inline-block;
+    content: '\f002';
+    background: none;
+    text-indent: 0;
+    width: auto;
+    height: auto;
+ }
+.flex-direction-nav a.flex-next:before  { content: '\f002'; }
+
+/* Pause/Play */
+.flex-pauseplay a { display: block; width: 20px; height: 20px; position: absolute; bottom: 5px; left: 10px; opacity: 0.8; z-index: 10; overflow: hidden; cursor: pointer; color: #000; }
+.flex-pauseplay a:before  { font-family: "flexslider_pic-icon"; font-size: 20px; display: inline-block; content: '\f004'; }
+.flex-pauseplay a:hover  { opacity: 1; }
+.flex-pauseplay a.flex-play:before { content: '\f003'; }
+
+
+@media screen and (max-width: 768px) {
+  .flex-direction-nav .flex-prev { opacity: 1; left: 10px;}
+  .flex-direction-nav .flex-next { opacity: 1; right: 10px;}
+  
+}
+
+/*tab*/
+.tabContaier{
+	padding: 20px 5px;
+	width: 100%;
+	float: left;
+	clear:both;
+}
+	.tabContaier ul{
+	overflow: hidden;
+	z-index: 100;
+	margin:-40px auto auto auto;
+	padding: 0; width: 100%; 
+	
+	/*border-top:solid 1px rgba(74,180,187,1);*/
+    box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.1);
+	}
+	.tabContaier li{
+		float:right; text-align: center;
+		list-style:none;font-size: 13px; 
+		border:solid 1px  rgba(204,204,204,0.5);
+		
+	}
+	.tabContaier li a{
+	background:#fff;
+	/*color: #bcbec9;*/
+	color:#666;
+	cursor: pointer;
+	display: block;
+	padding:8px 50px;
+	text-decoration: none;
+	text-transform: uppercase;
+	/*border: solid 1px #f1f1f2;*/
+	
+	font-weight:400;
+	}
+	.tabContaier li a:hover{
+		background:#60c8c1;
+		color:#FFF;
+		text-shadow:none;
+	}
+	.tabContaier li a.active{
+background:#60c8c1;
+		color:#fff;
+	}
+	.tabDetails{
+		margin:30px 0 0;
+	}
+	.tabContents{
+		padding:10px 20px;
+	}
+	.tabContents h1{
+	
+		padding:0 0 10px;
+	}
+	.tabContents p{
+	padding: 0 0 10px;
+	font-size: 15px;
+	line-height: 22px;
+	
+	}
+
+#carousel.flexslider_pic	{
+
+}
+@media print, screen and (max-width:999px){
+.flex-control-thumbs img, .flexslider_pic .slides img	{
+	max-height:999999px;	
+}
+
+}
