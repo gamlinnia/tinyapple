@@ -43,9 +43,6 @@
     </works_completed_index>
     <works_completed_works>
         <reference name="head">
-            <action method="addItem">
-                <type>skin_js</type><script>tinyapple/flexslider/jquery.flexslider.js</script>
-            </action>
             <action method="addCss">
                 <stylesheet>tinyapple/flexslider/flexslider.css</stylesheet>
             </action>
@@ -53,14 +50,26 @@
                 <stylesheet>tinyapple/flexslider/flexslider_pic.css</stylesheet>
             </action>
             <action method="addItem">
-                <type>skin_js</type><script>tinyapple/popup/responsiveslides.min.js</script>
+                <type>skin_js</type><script>tinyapple/flexslider/jquery.flexslider.js</script>
+            </action>
+
+            <action method="addCss">
+                <stylesheet>tinyapple/magnific_popup/dist/magnific-popup.css</stylesheet>
             </action>
             <action method="addItem">
-                <type>skin_js</type><script>tinyapple/popup/venobox.min.js</script>
+                <type>skin_js</type><script>tinyapple/magnific_popup/dist/jquery.magnific-popup.js</script>
             </action>
-            <action method="addCss">
-                <stylesheet>tinyapple/popup/venobox.css</stylesheet>
-            </action>
+            <!--
+                        <action method="addItem">
+                            <type>skin_js</type><script>tinyapple/popup/responsiveslides.min.js</script>
+                        </action>
+                        <action method="addItem">
+                            <type>skin_js</type><script>tinyapple/popup/venobox.min.js</script>
+                        </action>
+                        <action method="addCss">
+                            <stylesheet>tinyapple/popup/venobox.css</stylesheet>
+                        </action>
+            -->
         </reference>
 
         <update handle="tinyapple_insidepage" />
