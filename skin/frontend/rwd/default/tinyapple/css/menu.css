@@ -415,8 +415,29 @@
 	#footer-ad p {
 		display: block;
 		width: 100%;
-		margin: 0;
+		margin: 5px 0 0 0;
 		text-align: right;
+	}
+	#footer-ad .fa-facebook, #footer-ad .fb-icon:hover .fa-facebook {
+		-webkit-transition: 0.5s ease;
+		-moz-transition: 0.5s ease;
+		-ms-transition: 0.5s ease;
+		transition: 0.5s ease;
+	}
+	#footer-ad .fa-facebook {
+	    font-size: 20px;
+	    margin-right: .5em;
+	    padding: 6px 10px;
+	    color: #3b5e8a;
+	    border-radius: 26px 26px 26px 26px;
+	    -moz-border-radius: 26px 26px 26px 26px;
+	    -webkit-border-radius: 26px 26px 26px 26px;
+	    border: 1px solid #fcfcfc;
+	    background: #fcfcfc;
+	}
+	#footer-ad .fb-icon:hover .fa-facebook {
+		background: #3b5998;
+		color: #fcfcfc;
 	}
 
 	footer .askprice, #footer-ad p {
@@ -623,6 +644,9 @@
 	}
 	#footer-logo a {
 		line-height: 2em;
+	}
+	#footer-ad .fb-icon {
+		display: block;
 	}
 	#footer-nav li a {
 		font-size: .88rem;
