@@ -424,6 +424,9 @@
 		-ms-transition: 0.5s ease;
 		transition: 0.5s ease;
 	}
+	#footer-ad .fb-icon:after {
+		content: " / ";
+	}
 	#footer-ad .fa-facebook {
 	    font-size: 20px;
 	    margin-right: .5em;
@@ -641,12 +644,19 @@
 	}
 	#footer-ad p {
 		text-align: left;
+		height: auto;
+		line-height: 40px;
+		margin-top: 2em;
+		padding-left: .3em;
 	}
 	#footer-logo a {
 		line-height: 2em;
 	}
-	#footer-ad .fb-icon {
+	#footer-ad  p > span {
 		display: block;
+	}
+	#footer-ad .fb-icon:after {
+		display: none;
 	}
 	#footer-nav li a {
 		font-size: .88rem;
