@@ -121,7 +121,7 @@
                 <default_keywords>Magento, Varien, E-commerce</default_keywords>
                 <default_robots>*</default_robots>
                 <default_media_type>text/html</default_media_type>
-                <default_charset>utf-8</default_charset>
+                <default_charset>big5</default_charset>
             </head>
             <header translate="welcome" module="page">
                 <logo_src>images/logo.gif</logo_src>

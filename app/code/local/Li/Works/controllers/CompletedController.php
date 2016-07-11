@@ -6,7 +6,7 @@ class Li_Works_CompletedController extends Mage_Core_Controller_Front_Action
     public function indexAction () {
         $this->loadLayout();
 
-        $this->getLayout()->getBlock('head')->setTitle('小蘋果工程-作品展示');
+        $this->getLayout()->getBlock('head')->setTitle('作品展示');
 
         $block=$this->getLayout()->createBlock('works/content');
 
