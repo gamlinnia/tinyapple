@@ -392,10 +392,10 @@
 		display: inline-block;
 		vertical-align: middle;
 		margin-top: 2rem;
-		height: 132px;
+		height: 178px;
 	}
 	#footer-logo a {
-		line-height: 132px;
+		line-height: 178px;
 	}
 
 	#footer-ad {
@@ -418,6 +418,10 @@
 		margin: 5px 0 0 0;
 		text-align: right;
 	}
+	#footer-ad p > span:last-child {
+		display: block;
+	}
+
 	#footer-ad .fa-facebook, #footer-ad .fb-icon:hover .fa-facebook {
 		-webkit-transition: 0.5s ease;
 		-moz-transition: 0.5s ease;
@@ -442,6 +446,32 @@
 		background: #3b5998;
 		color: #fcfcfc;
 	}
+
+	#footer-ad .footer-lineid > a {
+		position: relative;
+	}
+	#footer-ad .footer-lineid > a:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 1px;
+		position: absolute;
+		left: 0;
+		bottom: -3px;
+		background: #fcfcfc;
+	    -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	    -webkit-transition: all .3s;
+	    transition: all .3s;
+	}
+	#footer-ad .footer-lineid > a:hover:before {
+		width: 100%;
+	    -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	    -webkit-transition: all .3s;
+	    transition: all .3s;
+	}
+
 
 	footer .askprice, #footer-ad p {
 		height: 50px;
@@ -646,8 +676,10 @@
 		text-align: left;
 		height: auto;
 		line-height: 40px;
-		margin-top: 2em;
+		margin-top: 1em;
+		padding-top: .5em;
 		padding-left: .3em;
+		border-top: 1px dashed #efefef;
 	}
 	#footer-logo a {
 		line-height: 2em;
@@ -657,6 +689,10 @@
 	}
 	#footer-ad .fb-icon:after {
 		display: none;
+	}
+	#footer-ad .footer-lineid {
+		border-bottom: 1px dashed #efefef;
+		padding-bottom: .5em;
 	}
 	#footer-nav li a {
 		font-size: .88rem;

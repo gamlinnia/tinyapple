@@ -141,6 +141,9 @@
 	position: absolute;
 	background: url(../images/page-bg/page-bg-04.jpg) no-repeat bottom center;
 }
+.main02-bg.works-list-page:after {
+	content: none;
+}
 .main02-bg #main01 #page-wrap {
 	background: none;
 }
