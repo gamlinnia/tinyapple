@@ -105,6 +105,7 @@
 	.askprice span {
 		display: inline-block;
 		vertical-align: middle;
+		white-space: nowrap;
 		background: #dfdfdf;
 		color: #002658;
 		font-size: 1.2rem;
