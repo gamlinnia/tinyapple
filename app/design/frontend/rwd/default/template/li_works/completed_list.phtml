@@ -25,12 +25,13 @@
                                     ->crop()
                                     ->resize()
                                 ?>" /></div>
-                            <a href="<?php echo $this->helper('works/data')->getWorksUrl($_product) ?>" class="completed-item-text">
+                            <div class="completed-item-text">
                                 <span>
                                 <span class="fa fa-link"></span>
                                     <?php echo $_product->getName() ?>
                                 </span>
-                            </a>
+                            </div>
+                            <a href="<?php echo $this->helper('works/data')->getWorksUrl($_product) ?>" class="completed-list-item-link"></a>
                         </div><!-- end of completed-item -->
                     <?php endforeach ?>
 
